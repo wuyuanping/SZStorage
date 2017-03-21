@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZAccountBlindController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78O-Hk-9Kk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZT-RP-lp4">
+                            <rect key="frame" x="10" y="22" width="33" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="reBack" destination="-1" eventType="touchUpInside" id="toH-jW-zo2"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号绑定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-XI-h4i">
+                            <rect key="frame" x="147" y="30" width="82" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1803921568627451" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="GpZ-XI-h4i" firstAttribute="centerX" secondItem="78O-Hk-9Kk" secondAttribute="centerX" id="5jV-kz-xDh"/>
+                        <constraint firstAttribute="bottom" secondItem="OZT-RP-lp4" secondAttribute="bottom" constant="10" id="V6g-a3-snQ"/>
+                        <constraint firstAttribute="bottom" secondItem="GpZ-XI-h4i" secondAttribute="bottom" constant="10" id="Xhg-b3-jip"/>
+                        <constraint firstAttribute="height" constant="64" id="ZgK-wg-epV"/>
+                        <constraint firstItem="OZT-RP-lp4" firstAttribute="leading" secondItem="78O-Hk-9Kk" secondAttribute="leading" constant="10" id="vQi-3L-M5q"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5U-yE-Pfm">
+                    <rect key="frame" x="10" y="94" width="355" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fUk-Za-NDX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="创建个人店铺">
+                        <color key="titleColor" red="0.22745098039215686" green="0.59607843137254901" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="createPersonalStorage" destination="-1" eventType="touchUpInside" id="cLB-GE-ECs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egC-zK-3Xx">
+                    <rect key="frame" x="10" y="154" width="355" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="kDf-CU-Ued"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="加入已有店铺">
+                        <color key="titleColor" red="0.22745098039215686" green="0.59607843137254901" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="joinExitStorage" destination="-1" eventType="touchUpInside" id="Bty-BQ-Sta"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="78O-Hk-9Kk" secondAttribute="trailing" id="4Tu-L6-yUo"/>
+                <constraint firstItem="egC-zK-3Xx" firstAttribute="top" secondItem="m5U-yE-Pfm" secondAttribute="bottom" constant="10" id="5Is-K0-iKW"/>
+                <constraint firstItem="egC-zK-3Xx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="AIV-iR-g4S"/>
+                <constraint firstItem="78O-Hk-9Kk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gmh-t0-Bxf"/>
+                <constraint firstItem="m5U-yE-Pfm" firstAttribute="top" secondItem="78O-Hk-9Kk" secondAttribute="bottom" constant="30" id="JMd-pL-2a0"/>
+                <constraint firstItem="m5U-yE-Pfm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Ywb-0d-9Uc"/>
+                <constraint firstItem="78O-Hk-9Kk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a3t-aj-hOZ"/>
+                <constraint firstAttribute="trailing" secondItem="m5U-yE-Pfm" secondAttribute="trailing" constant="10" id="bQu-2E-Dri"/>
+                <constraint firstAttribute="trailing" secondItem="egC-zK-3Xx" secondAttribute="trailing" constant="10" id="lGH-Pa-npw"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+        </view>
+    </objects>
+</document>

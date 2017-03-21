@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZInputController">
+            <connections>
+                <outlet property="orderBtn" destination="mNL-hj-IoZ" id="Gaj-EU-Y2X"/>
+                <outlet property="searchView" destination="WLh-6r-gdv" id="f7a-LE-eh9"/>
+                <outlet property="selectBtn" destination="UJG-Vj-aRC" id="LKS-92-aE9"/>
+                <outlet property="sortKind" destination="SQc-aX-wgK" id="QZp-3C-4VB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQc-aX-wgK">
+                    <rect key="frame" x="0.0" y="54" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNL-hj-IoZ" customClass="SZSortKindButton">
+                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                            <state key="normal" title="库存" image="Triangle">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="Triangle-选中"/>
+                            <connections>
+                                <action selector="orderBtnClick" destination="-1" eventType="touchUpInside" id="TQ4-vj-Blk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJG-Vj-aRC" customClass="SZSortKindButton">
+                            <rect key="frame" x="188" y="0.0" width="187" height="44"/>
+                            <state key="normal" title="筛选" image="Triangle">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="Triangle-选中"/>
+                            <connections>
+                                <action selector="selectBtnClick" destination="-1" eventType="touchUpInside" id="rfh-v6-7ik"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwj-Qt-w0n">
+                            <rect key="frame" x="187" y="3" width="1" height="38"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="0bd-UA-CFq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Dwj-Qt-w0n" firstAttribute="leading" secondItem="mNL-hj-IoZ" secondAttribute="trailing" id="6C2-x8-Bb5"/>
+                        <constraint firstItem="mNL-hj-IoZ" firstAttribute="leading" secondItem="SQc-aX-wgK" secondAttribute="leading" id="7jY-kR-9qY"/>
+                        <constraint firstItem="Dwj-Qt-w0n" firstAttribute="top" secondItem="SQc-aX-wgK" secondAttribute="top" constant="3" id="ABF-jH-8Mb"/>
+                        <constraint firstItem="Dwj-Qt-w0n" firstAttribute="centerX" secondItem="SQc-aX-wgK" secondAttribute="centerX" id="NBL-nu-v9g"/>
+                        <constraint firstAttribute="bottom" secondItem="Dwj-Qt-w0n" secondAttribute="bottom" constant="3" id="Nma-Mq-Slc"/>
+                        <constraint firstAttribute="height" constant="44" id="QdC-4y-UxC"/>
+                        <constraint firstAttribute="trailing" secondItem="UJG-Vj-aRC" secondAttribute="trailing" id="c0X-5o-DHy"/>
+                        <constraint firstItem="UJG-Vj-aRC" firstAttribute="leading" secondItem="Dwj-Qt-w0n" secondAttribute="trailing" id="cZi-Jj-kFo"/>
+                        <constraint firstItem="UJG-Vj-aRC" firstAttribute="top" secondItem="SQc-aX-wgK" secondAttribute="top" id="lvk-uL-mbR"/>
+                        <constraint firstAttribute="bottom" secondItem="mNL-hj-IoZ" secondAttribute="bottom" id="rx5-5d-SCR"/>
+                        <constraint firstItem="mNL-hj-IoZ" firstAttribute="top" secondItem="SQc-aX-wgK" secondAttribute="top" id="tMT-3q-jgp"/>
+                        <constraint firstAttribute="bottom" secondItem="UJG-Vj-aRC" secondAttribute="bottom" id="yvl-8J-IdE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLh-6r-gdv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="SCb-kB-bwA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SQc-aX-wgK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Cmc-HB-F0c"/>
+                <constraint firstAttribute="trailing" secondItem="SQc-aX-wgK" secondAttribute="trailing" id="FON-hD-7Me"/>
+                <constraint firstItem="WLh-6r-gdv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KOm-Xg-ZQX"/>
+                <constraint firstAttribute="trailing" secondItem="WLh-6r-gdv" secondAttribute="trailing" id="TeP-6m-DwN"/>
+                <constraint firstItem="SQc-aX-wgK" firstAttribute="top" secondItem="WLh-6r-gdv" secondAttribute="bottom" constant="10" id="WSq-aW-uZW"/>
+                <constraint firstItem="WLh-6r-gdv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i6p-a3-SOs"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Triangle" width="8" height="6"/>
+        <image name="Triangle-选中" width="8" height="6"/>
+    </resources>
+</document>

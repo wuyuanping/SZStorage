@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZGoodsOutputController">
+            <connections>
+                <outlet property="goodsTableView" destination="hLX-cc-a16" id="lI8-BF-Eem"/>
+                <outlet property="orderBtn" destination="UDq-qT-07B" id="da3-LF-96e"/>
+                <outlet property="searchView" destination="eeU-sx-fjQ" id="Xn9-7f-JFE"/>
+                <outlet property="selectBtn" destination="Sx8-Ga-cVg" id="wyo-nq-Nea"/>
+                <outlet property="showNoneView" destination="xbh-4h-AJf" id="j2f-vV-y7h"/>
+                <outlet property="sortKinds" destination="dpy-zx-KEA" id="I1A-bq-2Bc"/>
+                <outlet property="view" destination="iN0-l3-epB" id="sif-za-T7w"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-sx-fjQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zNG-WX-cXJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpy-zx-KEA">
+                    <rect key="frame" x="0.0" y="54" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-qT-07B" customClass="SZSortKindButton">
+                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="库存" image="Triangle">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="Triangle-选中"/>
+                            <state key="highlighted" image="Triangle-选中">
+                                <color key="titleColor" red="0.25882352941176467" green="0.54509803921568623" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="orderBtnClick" destination="-1" eventType="touchUpInside" id="uem-AU-mBT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sx8-Ga-cVg" customClass="SZSortKindButton">
+                            <rect key="frame" x="188" y="0.0" width="187" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="筛选" image="Triangle">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="Triangle-选中"/>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.25882352941176467" green="0.54509803921568623" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="selectBtnClick" destination="-1" eventType="touchUpInside" id="Nl1-cu-W3G"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNP-Hn-ttf">
+                            <rect key="frame" x="187" y="6" width="1" height="32"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="dNU-Ag-Uol"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvh-9X-bYM">
+                            <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="zXf-fw-rLG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="GNP-Hn-ttf" firstAttribute="leading" secondItem="UDq-qT-07B" secondAttribute="trailing" id="96w-Ou-2Si"/>
+                        <constraint firstAttribute="height" constant="44" id="Cow-Qz-Jxa"/>
+                        <constraint firstAttribute="trailing" secondItem="Sx8-Ga-cVg" secondAttribute="trailing" id="CxG-sn-EWB"/>
+                        <constraint firstItem="UDq-qT-07B" firstAttribute="top" secondItem="dpy-zx-KEA" secondAttribute="top" id="EDf-S6-sq1"/>
+                        <constraint firstItem="GNP-Hn-ttf" firstAttribute="top" secondItem="dpy-zx-KEA" secondAttribute="top" constant="6" id="MKG-3o-Hno"/>
+                        <constraint firstAttribute="bottom" secondItem="Sx8-Ga-cVg" secondAttribute="bottom" id="YQX-sb-jbe"/>
+                        <constraint firstAttribute="bottom" secondItem="tvh-9X-bYM" secondAttribute="bottom" id="YhG-2c-oDs"/>
+                        <constraint firstItem="Sx8-Ga-cVg" firstAttribute="width" secondItem="UDq-qT-07B" secondAttribute="width" id="ZSL-fU-u5w"/>
+                        <constraint firstAttribute="bottom" secondItem="UDq-qT-07B" secondAttribute="bottom" id="etS-Yb-gvP"/>
+                        <constraint firstAttribute="bottom" secondItem="GNP-Hn-ttf" secondAttribute="bottom" constant="6" id="hTJ-t2-6Fk"/>
+                        <constraint firstItem="Sx8-Ga-cVg" firstAttribute="top" secondItem="dpy-zx-KEA" secondAttribute="top" id="iEu-r2-4F4"/>
+                        <constraint firstItem="tvh-9X-bYM" firstAttribute="leading" secondItem="dpy-zx-KEA" secondAttribute="leading" id="ipt-wy-Pkk"/>
+                        <constraint firstItem="Sx8-Ga-cVg" firstAttribute="leading" secondItem="GNP-Hn-ttf" secondAttribute="trailing" id="jl4-wU-Fzn"/>
+                        <constraint firstItem="GNP-Hn-ttf" firstAttribute="centerX" secondItem="dpy-zx-KEA" secondAttribute="centerX" id="qjr-E4-DVg"/>
+                        <constraint firstAttribute="trailing" secondItem="tvh-9X-bYM" secondAttribute="trailing" id="uE0-m0-bAL"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hLX-cc-a16" customClass="SZBaseTableView">
+                    <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-4h-AJf">
+                    <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_商品出库_无商品" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-UN-Vr3">
+                            <rect key="frame" x="110" y="80" width="155" height="97"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有商品,快去添加吧~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTx-bx-2rP">
+                            <rect key="frame" x="99" y="217" width="177" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tFR-UN-Vr3" firstAttribute="leading" secondItem="xbh-4h-AJf" secondAttribute="leading" constant="110" id="0kY-4I-l1J"/>
+                        <constraint firstItem="XTx-bx-2rP" firstAttribute="top" secondItem="tFR-UN-Vr3" secondAttribute="bottom" constant="40" id="DVp-hI-OPb"/>
+                        <constraint firstItem="tFR-UN-Vr3" firstAttribute="top" secondItem="xbh-4h-AJf" secondAttribute="top" constant="80" id="Re3-wJ-Mlr"/>
+                        <constraint firstItem="XTx-bx-2rP" firstAttribute="centerX" secondItem="xbh-4h-AJf" secondAttribute="centerX" id="cok-gf-050"/>
+                        <constraint firstAttribute="trailing" secondItem="tFR-UN-Vr3" secondAttribute="trailing" constant="110" id="pdU-0U-uLd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xbh-4h-AJf" firstAttribute="top" secondItem="dpy-zx-KEA" secondAttribute="bottom" constant="1" id="5Fz-s1-8IE"/>
+                <constraint firstItem="eeU-sx-fjQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BeQ-wg-B46"/>
+                <constraint firstAttribute="bottom" secondItem="xbh-4h-AJf" secondAttribute="bottom" id="CJt-jP-68b"/>
+                <constraint firstAttribute="trailing" secondItem="hLX-cc-a16" secondAttribute="trailing" id="END-wa-iRK"/>
+                <constraint firstItem="dpy-zx-KEA" firstAttribute="top" secondItem="eeU-sx-fjQ" secondAttribute="bottom" constant="10" id="Hkp-SY-4uo"/>
+                <constraint firstItem="hLX-cc-a16" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LZN-wD-JPd"/>
+                <constraint firstItem="dpy-zx-KEA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Snq-Xf-Iml"/>
+                <constraint firstItem="hLX-cc-a16" firstAttribute="top" secondItem="dpy-zx-KEA" secondAttribute="bottom" constant="1" id="TSO-zT-Ita"/>
+                <constraint firstItem="xbh-4h-AJf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X3e-se-CDn"/>
+                <constraint firstAttribute="bottom" secondItem="hLX-cc-a16" secondAttribute="bottom" constant="49" id="Y7m-08-tVS"/>
+                <constraint firstAttribute="trailing" secondItem="dpy-zx-KEA" secondAttribute="trailing" id="Yle-Ve-eyC"/>
+                <constraint firstAttribute="trailing" secondItem="xbh-4h-AJf" secondAttribute="trailing" id="ihf-5Q-q0q"/>
+                <constraint firstAttribute="trailing" secondItem="eeU-sx-fjQ" secondAttribute="trailing" id="jKM-XH-I2T"/>
+                <constraint firstItem="eeU-sx-fjQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="osh-QH-Efq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="-10.5" y="43.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Triangle" width="8" height="6"/>
+        <image name="Triangle-选中" width="8" height="6"/>
+        <image name="icon_商品出库_无商品" width="160" height="97"/>
+    </resources>
+</document>

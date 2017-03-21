@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZGoodsInputController">
+            <connections>
+                <outlet property="addGoodsView" destination="ypT-DB-1Ib" id="4Xe-Ah-ZvB"/>
+                <outlet property="goodsInputView" destination="Xdh-AO-2BP" id="8qB-Zl-fPU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="oy0-US-EvC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="服装" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-rQ-z3T">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="210" id="nei-kp-f65"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypT-DB-1Ib">
+                    <rect key="frame" x="10" y="230" width="172.5" height="218"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-QA-jDc">
+                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="218"/>
+                            <state key="normal" image="新增商品"/>
+                            <connections>
+                                <action selector="addGoods" destination="-1" eventType="touchUpInside" id="moK-P0-QGU"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4zX-QA-jDc" firstAttribute="top" secondItem="ypT-DB-1Ib" secondAttribute="top" id="5xc-tV-C5z"/>
+                        <constraint firstAttribute="bottom" secondItem="4zX-QA-jDc" secondAttribute="bottom" id="uqk-yi-8h6"/>
+                        <constraint firstItem="4zX-QA-jDc" firstAttribute="leading" secondItem="ypT-DB-1Ib" secondAttribute="leading" id="wQV-Cz-JMQ"/>
+                        <constraint firstAttribute="trailing" secondItem="4zX-QA-jDc" secondAttribute="trailing" id="yEn-vm-tUO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-AO-2BP">
+                    <rect key="frame" x="192.5" y="230" width="172.5" height="218"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4f-W9-efY">
+                            <rect key="frame" x="0.0" y="0.0" width="172" height="218"/>
+                            <state key="normal" image="商品入库"/>
+                            <connections>
+                                <action selector="goodsInput" destination="-1" eventType="touchUpInside" id="D68-gU-5G0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="218" id="Nwj-Jx-qlW"/>
+                        <constraint firstAttribute="trailing" secondItem="o4f-W9-efY" secondAttribute="trailing" id="QWw-pU-sH7"/>
+                        <constraint firstAttribute="bottom" secondItem="o4f-W9-efY" secondAttribute="bottom" id="dJy-FM-8GE"/>
+                        <constraint firstItem="o4f-W9-efY" firstAttribute="top" secondItem="Xdh-AO-2BP" secondAttribute="top" id="lsV-24-yxk"/>
+                        <constraint firstItem="o4f-W9-efY" firstAttribute="leading" secondItem="Xdh-AO-2BP" secondAttribute="leading" id="tWY-uN-zYR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ypT-DB-1Ib" firstAttribute="width" secondItem="Xdh-AO-2BP" secondAttribute="width" id="1vK-Lo-xBQ"/>
+                <constraint firstItem="MW2-rQ-z3T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HoW-lH-mv0"/>
+                <constraint firstItem="ypT-DB-1Ib" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Mtj-cR-EfC"/>
+                <constraint firstItem="MW2-rQ-z3T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Scr-O8-dlp"/>
+                <constraint firstItem="ypT-DB-1Ib" firstAttribute="height" secondItem="Xdh-AO-2BP" secondAttribute="height" id="YZl-wl-tXS"/>
+                <constraint firstAttribute="trailing" secondItem="MW2-rQ-z3T" secondAttribute="trailing" id="kQB-Rn-F4Z"/>
+                <constraint firstItem="Xdh-AO-2BP" firstAttribute="leading" secondItem="ypT-DB-1Ib" secondAttribute="trailing" constant="10" id="luA-ZR-dla"/>
+                <constraint firstItem="ypT-DB-1Ib" firstAttribute="top" secondItem="MW2-rQ-z3T" secondAttribute="bottom" constant="20" id="nZi-CE-1Ng"/>
+                <constraint firstAttribute="trailing" secondItem="Xdh-AO-2BP" secondAttribute="trailing" constant="10" id="tLM-zU-3j4"/>
+                <constraint firstItem="Xdh-AO-2BP" firstAttribute="top" secondItem="MW2-rQ-z3T" secondAttribute="bottom" constant="20" id="zez-EK-3rX"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="商品入库" width="173" height="219"/>
+        <image name="新增商品" width="173" height="219"/>
+        <image name="服装" width="375" height="210"/>
+    </resources>
+</document>

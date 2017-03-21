@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="SZCustomerManagerCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优衣库广州店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXV-vG-HpK">
+                        <rect key="frame" x="10" y="10" width="104" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_管理_联系人" translatesAutoresizingMaskIntoConstraints="NO" id="6QZ-WM-K5H">
+                        <rect key="frame" x="10" y="44.5" width="13" height="15"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7S-G9-j4e">
+                        <rect key="frame" x="28" y="41.5" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_客户管理_手机" translatesAutoresizingMaskIntoConstraints="NO" id="pik-gN-ITI">
+                        <rect key="frame" x="79" y="46" width="12" height="14"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18273899999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7b-oV-bia">
+                        <rect key="frame" x="96" y="41.5" width="98.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_商品出库_更多" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-xh-q3z">
+                        <rect key="frame" x="292" y="26" width="8" height="12"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6QZ-WM-K5H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Gx6-e6-Mk5"/>
+                    <constraint firstItem="QEC-xh-q3z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="JVP-0m-ncq"/>
+                    <constraint firstAttribute="bottom" secondItem="pik-gN-ITI" secondAttribute="bottom" constant="10" id="KEr-jC-8dX"/>
+                    <constraint firstAttribute="trailing" secondItem="QEC-xh-q3z" secondAttribute="trailing" constant="20" id="a6q-Mw-zxr"/>
+                    <constraint firstItem="M7S-G9-j4e" firstAttribute="leading" secondItem="6QZ-WM-K5H" secondAttribute="trailing" constant="5" id="e9E-sO-e3x"/>
+                    <constraint firstItem="D7b-oV-bia" firstAttribute="leading" secondItem="pik-gN-ITI" secondAttribute="trailing" constant="5" id="f1o-3b-jSb"/>
+                    <constraint firstItem="NXV-vG-HpK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fm7-6w-aMD"/>
+                    <constraint firstAttribute="bottom" secondItem="D7b-oV-bia" secondAttribute="bottom" constant="10" id="jpX-RK-2Mg"/>
+                    <constraint firstAttribute="bottom" secondItem="6QZ-WM-K5H" secondAttribute="bottom" constant="10" id="qOm-kx-w7Y"/>
+                    <constraint firstAttribute="bottom" secondItem="M7S-G9-j4e" secondAttribute="bottom" constant="10" id="tXM-Sn-KQR"/>
+                    <constraint firstItem="NXV-vG-HpK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tkY-VE-djC"/>
+                    <constraint firstItem="pik-gN-ITI" firstAttribute="leading" secondItem="M7S-G9-j4e" secondAttribute="trailing" constant="20" id="zey-cJ-6CH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-10" y="39"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_商品出库_更多" width="8" height="12"/>
+        <image name="icon_客户管理_手机" width="12" height="14"/>
+        <image name="icon_管理_联系人" width="13" height="15"/>
+    </resources>
+</document>
