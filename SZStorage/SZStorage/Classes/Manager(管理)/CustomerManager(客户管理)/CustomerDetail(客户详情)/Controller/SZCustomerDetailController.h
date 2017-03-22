@@ -8,6 +8,8 @@
 
 #import "SZBaseViewController.h"
 
+@class SZCustomerItem;
 @interface SZCustomerDetailController : SZBaseViewController
 
+@property (nonatomic,strong) SZCustomerItem *item;
 @end

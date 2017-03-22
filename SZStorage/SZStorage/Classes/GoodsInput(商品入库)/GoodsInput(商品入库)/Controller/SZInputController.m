@@ -58,7 +58,7 @@
 
 - (void)setup
 {
-    self.navigationItem.title = @"商品出库";
+    self.navigationItem.title = @"商品入库";
     self.view.backgroundColor = SZColor(240, 240, 240);
     _sortKind.backgroundColor = SZColor(255, 255, 255);
  
@@ -68,8 +68,8 @@
     
     //监听通知
     [self registerForNotifications];
-
 }
+
 - (void)registerForNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedOrder:) name:@"changOrder" object:nil];

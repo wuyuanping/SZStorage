@@ -54,10 +54,30 @@ AFHTTPSessionManager *_mgr;
     }];
 }
 
++ (void)getJSONWithURL:(NSString *)url
+                params:(id)params
+               success:(void (^)(id responseJSON))success
+               failure:(void (^)(NSError *error))failure;
+{
+    if (!_mgr) {
+        _mgr = [AFHTTPSessionManager manager];
+    }
+    _mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    [_mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+
 
 
 //TODO : 解析参数待更改！！
-
 + (void)postToUrlStr:(NSString *)urlString
    WithParameterDic:(NSDictionary *)dict
            Sucessful:(void (^)(NSDictionary *))Sucessful

@@ -26,6 +26,7 @@
     #import "YYKit.h"
     #import "SVProgressHUD.h"
     #import "MJRefresh.h"
+    #import "MJExtension.h"
     #import "Masonry.h"
     #import "AFNetworking.h"
     #import "SZHttpsRequest.h"

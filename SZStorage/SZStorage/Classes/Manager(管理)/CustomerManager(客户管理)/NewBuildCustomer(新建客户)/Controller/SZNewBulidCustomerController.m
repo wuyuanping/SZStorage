@@ -36,7 +36,7 @@
 {
     //客户信息提交服务器
     NSDictionary *dic = @{
-                          @"username":@(17689899898),
+                          @"username":@(13979579263),
                           @"shop_no":@(10),
                           @"customer_info": @{
                           @"customer_no":@(1),
@@ -51,7 +51,7 @@
     [SZHttpsRequest postJSONWithURL:addCustomerUrl params:dic success:^(id responseJSON) {
         NSLog(@"%@",responseJSON[@"code"]);
         if ([responseJSON[@"code"] isEqual: @(0)]) {
-            [SVProgressHUD showInfoWithStatus:@"报告老板，保存成功"];
+            [SVProgressHUD showInfoWithStatus:@"恭喜，客户保存成功"];
         }else{
             NSLog(@"保存失败");
         }

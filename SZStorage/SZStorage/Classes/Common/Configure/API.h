@@ -14,11 +14,21 @@
 #define registerUrl @"http://st.kingnzo.com/user/userregister"
 #define userLoginUrl @"http://st.kingnzo.com/user/userlogin"
 
+//创建店铺
+#define createShopUrl @"http://st.kingnzo.com/shop/shopcreate"
+
+//供应商管理
+#define supplierSelectUrl @"http://st.kingnzo.com/supply/supplylist"
+#define supplierAddUrl @"http://st.kingnzo.com/supply/supplyadd"
+
+
 //客户管理
 #define addCustomerUrl @"http://st.kingnzo.com/customer/customercreate"
 #define selectCustomerUrl @"http://st.kingnzo.com/customer/customerlist"
 #define editCustomerUrl @"http://st.kingnzo.com/customer/customermod"
 #define deleteCustomerUrl @"http://st.kingnzo.com/customer/customerdel"
+
+
 
 
 #endif /* API_h */

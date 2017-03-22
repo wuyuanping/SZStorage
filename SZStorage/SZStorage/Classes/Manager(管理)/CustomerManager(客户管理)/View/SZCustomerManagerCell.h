@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SZCustomerItem;
 @interface SZCustomerManagerCell : UITableViewCell
+@property (nonatomic,strong) SZCustomerItem *item;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

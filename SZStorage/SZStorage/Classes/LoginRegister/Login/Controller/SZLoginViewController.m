@@ -64,6 +64,7 @@
         [SZHttpsRequest postJSONWithURL:userLoginUrl params:dic success:^(id responseJSON) {
             if ([responseJSON[@"code"] isEqual:@(0)]) {
                 NSLog(@"用户登录成功");
+                [[NSUserDefaults standardUserDefaults] setObject:_phoneTextFiled.text forKey:@"username"];
                 // 进入账号绑定页面
                 SZAccountBlindController *accountVC = [[SZAccountBlindController alloc] init];
                 [UIApplication sharedApplication].keyWindow.rootViewController = accountVC;
@@ -116,9 +117,19 @@
     [_pswTextFiled resignFirstResponder];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [SVProgressHUD dismiss];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
+
 @end

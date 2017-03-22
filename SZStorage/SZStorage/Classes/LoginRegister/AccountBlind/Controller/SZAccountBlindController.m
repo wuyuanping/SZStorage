@@ -31,7 +31,7 @@
 //创建个人店铺
 - (IBAction)createPersonalStorage
 {
-    SZCreatePersonalStorageController *createPerStorageVC = [[SZCreatePersonalStorageController alloc] init];
+    SZCreatePersonalStorageController *createPerStorageVC = [[SZCreatePersonalStorageController alloc] init];  
     [UIApplication sharedApplication].keyWindow.rootViewController = createPerStorageVC;
 }
 
@@ -54,5 +54,9 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
 
 @end

@@ -32,10 +32,10 @@
  *  @param success 请求成功后的回调
  *  @param failure 请求失败后的回调
  */
-//+ (void)postJSONWithURL:(NSString *)url
-//                 params:(id)params
-//                success:(void (^)(id responseJSON))success
-//                failure:(void (^)(NSError *error))failure;
++ (void)getJSONWithURL:(NSString *)url
+                 params:(id)params
+                success:(void (^)(id responseJSON))success
+                failure:(void (^)(NSError *error))failure;
 
 
 

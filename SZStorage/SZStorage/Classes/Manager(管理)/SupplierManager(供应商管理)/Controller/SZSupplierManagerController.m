@@ -9,6 +9,7 @@
 #import "SZSupplierManagerController.h"
 #import "SZSupplierManagerCell.h"
 #import "SZSupplierDetailController.h"
+#import "SZNewBuildSupplierController.h"
 
 @interface SZSupplierManagerController ()
 
@@ -20,11 +21,39 @@
 {
     [super viewDidLoad];
     [self setup];
+    [self loadData];
 }
 
 - (void)setup
 {
     self.navigationItem.title = @"供应商管理";
+    UIBarButtonItem *newBuildSupplier = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_添加商品") selImage:IMAGE_NAMED(@"iicon_商品管理_添加商品") target:self action:@selector(newBuildSupplierClick)];
+    self.navigationItem.rightBarButtonItems = @[newBuildSupplier];
+}
+
+- (void)newBuildSupplierClick
+{
+    SZNewBuildSupplierController *newBuildSupVC = [[SZNewBuildSupplierController alloc] init];
+    [self.navigationController pushViewController:newBuildSupVC animated:YES];
+}
+
+- (void)loadData
+{
+    NSDictionary *dic = @{
+                          @"username":@(13979579263),
+                          @"shop_no":@(10),
+                          @"key_word":@"",
+                          @"page_num":@(1),
+                          @"page_size":@(10)
+                          };
+    [SZHttpsRequest postJSONWithURL:supplierSelectUrl params:dic success:^(id responseJSON) {
+        if ([responseJSON[@"code"] isEqual:@(0)]) {
+            NSLog(@"查询供应商成功");
+            NSLog(@"%@",responseJSON[@"data"]);
+        }else{
+            NSLog(@"查询供应商失败");
+        }
+    } failure:nil];
 }
 
 - (void)didReceiveMemoryWarning

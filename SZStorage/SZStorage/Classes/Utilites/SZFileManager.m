@@ -24,7 +24,7 @@
             CGFloat sizeF = size / 1000.0;
             str = [NSString stringWithFormat:@"%@(%.1fKB)",str,sizeF];
         } else if (size > 0) { // B
-            str = [NSString stringWithFormat:@"%@(%ldB)",str,size];
+            str = [NSString stringWithFormat:@"%@(%ldB)",str,(long)size];
         }
         str = [str stringByReplacingOccurrencesOfString:@".0" withString:@""];
         if (strCompletion) {

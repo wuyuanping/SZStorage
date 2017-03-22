@@ -17,6 +17,8 @@
 		AA04AFDD1E7BCFF5003EDB44 /* SZWhiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */; };
 		AA04AFDE1E7BCFF5003EDB44 /* SZWhiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */; };
 		AA04AFE01E7C2269003EDB44 /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDF1E7C2269003EDB44 /* Main.xcassets */; };
+		AA39B3111E822EBF00FCADFD /* SZCustomerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39B3101E822EBF00FCADFD /* SZCustomerItem.m */; };
+		AA39B3161E827CDE00FCADFD /* TruckOut.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA39B3151E827CDE00FCADFD /* TruckOut.xcassets */; };
 		AA438D961E7A78DA0087D20A /* SZWeChatLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA438D941E7A78DA0087D20A /* SZWeChatLoginController.m */; };
 		AA438D971E7A78DA0087D20A /* SZWeChatLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA438D951E7A78DA0087D20A /* SZWeChatLoginController.xib */; };
 		AA438D9A1E7A7F520087D20A /* SZTruckOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA438D991E7A7F520087D20A /* SZTruckOutController.m */; };
@@ -141,6 +143,9 @@
 		AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWhiteViewController.m; sourceTree = "<group>"; };
 		AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZWhiteViewController.xib; sourceTree = "<group>"; };
 		AA04AFDF1E7C2269003EDB44 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
+		AA39B30F1E822EBF00FCADFD /* SZCustomerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCustomerItem.h; sourceTree = "<group>"; };
+		AA39B3101E822EBF00FCADFD /* SZCustomerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCustomerItem.m; sourceTree = "<group>"; };
+		AA39B3151E827CDE00FCADFD /* TruckOut.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TruckOut.xcassets; sourceTree = "<group>"; };
 		AA438D7A1E7A36350087D20A /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		AA438D931E7A78DA0087D20A /* SZWeChatLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZWeChatLoginController.h; sourceTree = "<group>"; };
 		AA438D941E7A78DA0087D20A /* SZWeChatLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWeChatLoginController.m; sourceTree = "<group>"; };
@@ -1246,6 +1251,8 @@
 		AA7340131E7FC45700215A71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA39B30F1E822EBF00FCADFD /* SZCustomerItem.h */,
+				AA39B3101E822EBF00FCADFD /* SZCustomerItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1477,6 +1484,7 @@
 				AA733FFA1E7F8A8A00215A71 /* LoginRegister.xcassets */,
 				AA7340051E7FA07100215A71 /* AccountBlind.xcassets */,
 				AA73401A1E7FC59E00215A71 /* Manager.xcassets */,
+				AA39B3151E827CDE00FCADFD /* TruckOut.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1960,6 +1968,7 @@
 				AA7340331E7FE7B500215A71 /* SZNewBulidCustomerController.xib in Resources */,
 				AA438DAA1E7A8B1D0087D20A /* GoodsOutput.xcassets in Resources */,
 				AA7340041E7F9EE000215A71 /* SZStoryageVerifyController.xib in Resources */,
+				AA39B3161E827CDE00FCADFD /* TruckOut.xcassets in Resources */,
 				AA73404A1E8006E400215A71 /* SZWillVerifyStaffController.xib in Resources */,
 				AA55848F1E800D8500A1E164 /* SZStaffListCell.xib in Resources */,
 				AAEB0C591E74112D002F4218 /* SZVerifyPhoneController.xib in Resources */,
@@ -2074,6 +2083,7 @@
 				AAEB0C1C1E7298A2002F4218 /* SZLoginViewController.m in Sources */,
 				AAEB0C431E72B1ED002F4218 /* SZPasswordViewController.m in Sources */,
 				AAEB0C061E72619B002F4218 /* UINavigationBar+CoverView.m in Sources */,
+				AA39B3111E822EBF00FCADFD /* SZCustomerItem.m in Sources */,
 				AA493EEF1E7D2968002CF24D /* SZCoverView.m in Sources */,
 				AA73402B1E7FE15400215A71 /* SZNewBulidCustomerController.m in Sources */,
 				AA7340441E80068900215A71 /* SZStaffListController.m in Sources */,

@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZNewBuildSupplierController">
             <connections>
+                <outlet property="connectNameFiled" destination="SbY-hK-f4Q" id="5Wr-zi-72g"/>
+                <outlet property="phoneFiled" destination="w4B-v2-4qr" id="h9B-9c-453"/>
+                <outlet property="saveBtn" destination="ThU-4L-yax" id="7uF-hk-p8W"/>
+                <outlet property="supplierAdressFiled" destination="2TD-WL-gdv" id="IrM-PJ-bRY"/>
+                <outlet property="supplierNameFiled" destination="9zH-dt-ZAQ" id="KAH-mc-sfm"/>
                 <outlet property="view" destination="tNB-qf-z4B" id="6ND-6D-mCB"/>
             </connections>
         </placeholder>
@@ -34,14 +39,14 @@
                             <color key="textColor" red="0.96078431369999995" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="填写供应商名字" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zH-dt-ZAQ">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写供应商名字" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zH-dt-ZAQ">
                             <rect key="frame" x="120.5" y="13" width="244.5" height="17"/>
                             <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Gnc-NX-oTK" firstAttribute="leading" secondItem="dEG-Vf-RW7" secondAttribute="leading" constant="10" id="3BN-jr-Im6"/>
                         <constraint firstAttribute="trailing" secondItem="9zH-dt-ZAQ" secondAttribute="trailing" constant="10" id="3Rm-wy-kZl"/>
@@ -62,14 +67,14 @@
                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="填写联系人姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SbY-hK-f4Q">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写联系人姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SbY-hK-f4Q">
                             <rect key="frame" x="79" y="13.5" width="286" height="17"/>
                             <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="yMS-Sd-QtB" firstAttribute="centerY" secondItem="B9d-8Y-Tps" secondAttribute="centerY" id="JUI-Ta-f5W"/>
                         <constraint firstItem="yMS-Sd-QtB" firstAttribute="leading" secondItem="B9d-8Y-Tps" secondAttribute="leading" constant="10" id="QKp-l6-DY9"/>
@@ -88,14 +93,14 @@
                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="填写联系人手机号" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4B-v2-4qr">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写联系人手机号" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4B-v2-4qr">
                             <rect key="frame" x="79" y="13.5" width="286" height="17"/>
                             <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Yg6-xC-Sx6" firstAttribute="leading" secondItem="qnK-bX-jNM" secondAttribute="leading" constant="10" id="3Qy-yY-W1b"/>
                         <constraint firstItem="Yg6-xC-Sx6" firstAttribute="centerY" secondItem="qnK-bX-jNM" secondAttribute="centerY" id="CbR-KW-KnN"/>
@@ -114,14 +119,14 @@
                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="填写供应商地址" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TD-WL-gdv">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写供应商地址" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TD-WL-gdv">
                             <rect key="frame" x="63" y="13.5" width="302" height="17"/>
                             <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="4Gj-nh-A5o" firstAttribute="centerY" secondItem="WtY-BI-He6" secondAttribute="centerY" id="QDb-av-N3Q"/>
                         <constraint firstAttribute="height" constant="44" id="Wuc-yZ-5rx"/>
@@ -141,6 +146,9 @@
                     <state key="normal" title="保存">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="saveBtnClick" destination="-1" eventType="touchUpInside" id="vmX-qH-RpW"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -60,6 +60,7 @@
     ManagerVC.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"管理" image:IMAGE_NAMED(@"icon_底部栏_管理_正常") selectedImage:[IMAGE_NAMED(@"icon_底部栏_管理_选中") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     SZBaseNavigationController *fiveNav = [[SZBaseNavigationController alloc]initWithRootViewController:ManagerVC];
     self.viewControllers = @[oneNav,twoNav,threeNav,fourNav,fiveNav];
+
 }
 
 

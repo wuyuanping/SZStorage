@@ -7,12 +7,25 @@
 //
 
 #import "SZCustomerDetailController.h"
+#import "SZCustomerItem.h"
 
 @interface SZCustomerDetailController ()
+@property (weak, nonatomic) IBOutlet UITextField *cuetomerNameFiled;
+@property (weak, nonatomic) IBOutlet UITextField *connectPersonFiled;
+@property (weak, nonatomic) IBOutlet UITextField *phoneFiled;
+//客户标签
+@property (weak, nonatomic) IBOutlet UILabel *customerTag;
+@property (weak, nonatomic) IBOutlet UITextField *addressFiled;
 
 @end
 
 @implementation SZCustomerDetailController
+
+- (void)setValue:(id)value
+ forUndefinedKey:(NSString *)key
+{
+
+}
 
 - (void)viewDidLoad
 {
@@ -24,6 +37,20 @@
 {
     self.view.backgroundColor = SZColor(240, 240, 240);
     self.navigationItem.title = @"客户详情";
+}
+
+- (IBAction)customerBtnClick
+{
+
+}
+
+- (void)setItem:(SZCustomerItem *)item
+{
+    if (item) {
+        _cuetomerNameFiled.text = item.customer_name;
+        _phoneFiled.text = item.customer_mobile;
+        //TODO:其他参数
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches

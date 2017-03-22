@@ -61,6 +61,11 @@
                     <constraint firstItem="pik-gN-ITI" firstAttribute="leading" secondItem="M7S-G9-j4e" secondAttribute="trailing" constant="20" id="zey-cJ-6CH"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="PhoneLabel" destination="D7b-oV-bia" id="EgG-s1-gXO"/>
+                <outlet property="customerNameLabel" destination="M7S-G9-j4e" id="LmQ-N5-Pc9"/>
+                <outlet property="shopNameLabel" destination="NXV-vG-HpK" id="4fB-fD-651"/>
+            </connections>
             <point key="canvasLocation" x="-10" y="39"/>
         </tableViewCell>
     </objects>

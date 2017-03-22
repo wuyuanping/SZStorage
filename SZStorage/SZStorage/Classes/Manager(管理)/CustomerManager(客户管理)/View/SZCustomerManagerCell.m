@@ -7,8 +7,16 @@
 //
 
 #import "SZCustomerManagerCell.h"
+#import "SZCustomerItem.h"
 
+@interface SZCustomerManagerCell ()
+@property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *customerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *PhoneLabel;
+
+@end
 @implementation SZCustomerManagerCell
+
 
 - (void)awakeFromNib
 {
@@ -25,6 +33,14 @@
     return cell;
 }
 
+- (void)setItem:(SZCustomerItem *)item
+{
+    if (item) {
+        _shopNameLabel.text = item.customer_name;
+        _PhoneLabel.text = item.customer_mobile;
+//        _customerNameLabel.text = @"暂无";
+    }
+}
 
 
 @end
