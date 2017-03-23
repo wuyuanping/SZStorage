@@ -9,6 +9,7 @@
 #import "SZStaffListController.h"
 #import "SZStaffListCell.h"
 #import "SZStaffDetailController.h"
+#import "SZLoginViewController.h"
 
 @interface SZStaffListController ()
 
@@ -53,8 +54,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //崩溃？？？
-//    SZStaffDetailController *staffDetailVC = [[SZStaffDetailController alloc] init];
-//    [self.navigationController pushViewController:staffDetailVC animated:YES];
+    SZStaffDetailController *staffDetailVC = [[SZStaffDetailController alloc] init];
+    [self.navigationController pushViewController:staffDetailVC animated:YES];
 }
 
 @end

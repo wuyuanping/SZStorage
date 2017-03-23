@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SZSupplierItem;
 @interface SZSupplierManagerCell : UITableViewCell
 
+@property (nonatomic,strong) SZSupplierItem *item;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

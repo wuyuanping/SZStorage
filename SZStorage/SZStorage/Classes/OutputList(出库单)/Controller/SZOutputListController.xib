@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZOutputListController">
+            <connections>
+                <outlet property="noneContentView" destination="Bos-07-n4F" id="Lus-iU-hkJ"/>
+                <outlet property="searchView" destination="5sI-wF-RRP" id="M0H-Zo-GnL"/>
+                <outlet property="tableView" destination="llH-s9-e20" id="zIa-oQ-JT3"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uI6-jW-otT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sI-wF-RRP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="n7v-dy-e1b"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="llH-s9-e20" customClass="SZBaseTableView">
+                    <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zlf-b7-9um"/>
+                        <outlet property="delegate" destination="-1" id="yw0-ek-bmt"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-D6-HMx" customClass="SZFloatButton">
+                    <rect key="frame" x="261" y="533" width="114" height="60"/>
+                    <state key="normal" title="Button" image="icon_出库单_悬浮按钮_正常"/>
+                    <state key="selected" image="icon_出库单_悬浮按钮_选中"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-07-n4F">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_出库单_悬浮按钮_正常" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-yE-ApO">
+                            <rect key="frame" x="150" y="70" width="75" height="60"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无出库单，快去创建吧~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-04-k3A">
+                            <rect key="frame" x="93.5" y="180" width="189" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="H7D-yE-ApO" secondAttribute="trailing" constant="150" id="3gn-bQ-LyG"/>
+                        <constraint firstItem="H7D-yE-ApO" firstAttribute="top" secondItem="Bos-07-n4F" secondAttribute="top" constant="70" id="88B-bN-jz0"/>
+                        <constraint firstItem="qdN-04-k3A" firstAttribute="top" secondItem="H7D-yE-ApO" secondAttribute="bottom" constant="50" id="B6W-cT-AqN"/>
+                        <constraint firstItem="qdN-04-k3A" firstAttribute="centerX" secondItem="Bos-07-n4F" secondAttribute="centerX" id="eYo-jr-aDW"/>
+                        <constraint firstItem="H7D-yE-ApO" firstAttribute="leading" secondItem="Bos-07-n4F" secondAttribute="leading" constant="150" id="mKv-VE-FqU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Bos-07-n4F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3NC-Pn-SC1"/>
+                <constraint firstItem="llH-s9-e20" firstAttribute="top" secondItem="5sI-wF-RRP" secondAttribute="bottom" constant="10" id="67Y-CA-RCm"/>
+                <constraint firstItem="5sI-wF-RRP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6q0-gt-ez7"/>
+                <constraint firstAttribute="bottom" secondItem="Bos-07-n4F" secondAttribute="bottom" id="7d4-ba-zeY"/>
+                <constraint firstAttribute="trailing" secondItem="5sI-wF-RRP" secondAttribute="trailing" id="G2N-L9-qhb"/>
+                <constraint firstItem="Bos-07-n4F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="W7i-Ey-5x6"/>
+                <constraint firstAttribute="trailing" secondItem="Bos-07-n4F" secondAttribute="trailing" id="Wim-Mh-XTH"/>
+                <constraint firstAttribute="bottom" secondItem="dHa-D6-HMx" secondAttribute="bottom" constant="74" id="a3Q-y8-Q7R"/>
+                <constraint firstItem="llH-s9-e20" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ade-za-Lba"/>
+                <constraint firstAttribute="trailing" secondItem="llH-s9-e20" secondAttribute="trailing" id="lRC-Sk-geV"/>
+                <constraint firstAttribute="bottom" secondItem="llH-s9-e20" secondAttribute="bottom" id="tlP-P5-bjV"/>
+                <constraint firstItem="5sI-wF-RRP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v8o-JG-hYH"/>
+                <constraint firstAttribute="trailing" secondItem="dHa-D6-HMx" secondAttribute="trailing" id="xcW-3I-ryq"/>
+            </constraints>
+            <point key="canvasLocation" x="-79" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_出库单_悬浮按钮_正常" width="60" height="60"/>
+        <image name="icon_出库单_悬浮按钮_选中" width="60" height="60"/>
+    </resources>
+</document>

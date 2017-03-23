@@ -19,7 +19,10 @@
 
 //供应商管理
 #define supplierSelectUrl @"http://st.kingnzo.com/supply/supplylist"
-#define supplierAddUrl @"http://st.kingnzo.com/supply/supplyadd"
+#define supplierAddUrl @"http://st.kingnzo.com/supply/supplycreate"
+#define SelectPersonalSupplierUrl @"http://st.kingnzo.com/supply/supplyinfo"
+#define supplierModifeUrl @"http://st.kingnzo.com/supply/supplymode"
+
 
 
 //客户管理

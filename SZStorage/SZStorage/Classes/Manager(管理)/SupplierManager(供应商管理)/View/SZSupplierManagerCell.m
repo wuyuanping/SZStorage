@@ -7,6 +7,7 @@
 //
 
 #import "SZSupplierManagerCell.h"
+#import "SZSupplierItem.h"
 
 @interface SZSupplierManagerCell ()
 //供应商名字
@@ -35,9 +36,16 @@
     return cell;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setItem:(SZSupplierItem *)item
+{
+    _supplierNameLabel.text = item.supplier_name;
+    _connectNameLabel.text = item.contact;
+    _connectPhoneLabel.text = item.contact_mobile;
+}
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
 }
 
 @end

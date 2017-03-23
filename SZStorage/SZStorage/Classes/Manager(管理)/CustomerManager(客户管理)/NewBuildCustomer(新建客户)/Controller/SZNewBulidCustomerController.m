@@ -35,9 +35,11 @@
 - (IBAction)saveCustomerBtnClick
 {
     //客户信息提交服务器
+   NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+   NSString *shop_no = [[NSUserDefaults standardUserDefaults] objectForKey:@"shop_no"];
     NSDictionary *dic = @{
-                          @"username":@(13979579263),
-                          @"shop_no":@(10),
+                          @"username":username,
+                          @"shop_no":shop_no,
                           @"customer_info": @{
                           @"customer_no":@(1),
                           @"customer_name": _customerNameFiled.text,
@@ -52,6 +54,7 @@
         NSLog(@"%@",responseJSON[@"code"]);
         if ([responseJSON[@"code"] isEqual: @(0)]) {
             [SVProgressHUD showInfoWithStatus:@"恭喜，客户保存成功"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"savedCustomer"];
         }else{
             NSLog(@"保存失败");
         }

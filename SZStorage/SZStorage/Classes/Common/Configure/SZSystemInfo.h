@@ -80,6 +80,8 @@
 #ifndef IsEmptyStr
 #define  IsEmptyStr(string) string == nil || string == NULL ||[string isKindOfClass:[NSNull class]]|| [string isEqualToString:@""] ||[[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0 ? YES : NO
 #endif
+
+
 @interface SZSystemInfo : NSObject
 
 /*

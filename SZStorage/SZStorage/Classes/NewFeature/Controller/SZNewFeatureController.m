@@ -75,10 +75,10 @@
     _pageControl.currentPage = scrollView.contentOffset.x / SCREEN_W;
 }
 
-//- (UIStatusBarStyle)preferredStatusBarStyle
-//{
-////       return UIStatusBarStyleLightContent;
-//}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+       return UIStatusBarStyleLightContent;
+}
 
 - (void)didReceiveMemoryWarning
 {

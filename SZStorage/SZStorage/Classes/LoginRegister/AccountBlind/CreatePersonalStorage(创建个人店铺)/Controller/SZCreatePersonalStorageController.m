@@ -53,6 +53,12 @@ static NSString *username = nil;
         [SZHttpsRequest postJSONWithURL:createShopUrl params:dic success:^(id responseJSON) {
             if ([responseJSON[@"code"] isEqual:@(0)]) {
                 [SVProgressHUD  showInfoWithStatus:@"恭喜，创建店铺成功。"];
+                NSLog(@"商店编号%@",responseJSON[@"data"][@"shop_no"]);
+                //生成一个SZ开头+六位随机数的shop_no
+                NSString *shop_no = [NSString stringWithFormat:@"%@",responseJSON[@"data"][@"shop_no"]];
+                [[NSUserDefaults standardUserDefaults] setObject:shop_no forKey:@"shop_no"];
+                NSLog(@"随机生成的商店编号是:%@",shop_no);
+                
                 SZTabBarController *tabVC = [[SZTabBarController alloc] init];
                 [UIApplication sharedApplication].keyWindow.rootViewController = tabVC;
                 [[NSUserDefaults standardUserDefaults] setObject:isLogined forKey:kSZIsLogined];

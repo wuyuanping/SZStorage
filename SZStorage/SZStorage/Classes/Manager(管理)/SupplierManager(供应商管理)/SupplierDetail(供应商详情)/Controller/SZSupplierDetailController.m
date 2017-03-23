@@ -17,13 +17,15 @@
 
 
 @end
-
+static NSString *username = nil;
+static NSString *shop_no = nil;
 @implementation SZSupplierDetailController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setup];
+    [self loadData];
 }
 
 - (void)setup
@@ -35,13 +37,33 @@
     _ConnectPhoneFiled.userInteractionEnabled = NO;
     _addressFiled.userInteractionEnabled = NO;
     _saveBtn.hidden = YES;
-    
-    //TODO设置导航条右边按钮为： 编辑供应商
-    //1.白色笔
-    UIBarButtonItem *pencil = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_编辑") selImage:IMAGE_NAMED(@"icon_商品管理_编辑") target:self action:@selector(editSupplierClick)];
-    //2.编辑按钮
-//    UIBarButtonItem *edit = [UIBarButtonItem itemWithTitle:@"编辑供应商" color:[UIColor whiteColor] action:@selector(editSupplierClick)];
-    self.navigationItem.rightBarButtonItems = @[pencil];
+    UIBarButtonItem *pencil = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") selImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") target:self action:@selector(editSupplierClick)];
+    self.navigationItem.rightBarButtonItem = pencil;
+}
+
+- (void)loadData
+{
+    username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    shop_no = [[NSUserDefaults standardUserDefaults] objectForKey:@"shop_no"];
+    NSDictionary *dic = @{
+                          @"username":username,
+                          @"shop_no":shop_no,
+                          @"supplie_no":@"1"
+                          };
+    [SZHttpsRequest postJSONWithURL:SelectPersonalSupplierUrl params:dic success:^(id responseJSON) {
+        if ([responseJSON[@"code"] isEqual:@(0)]) {
+            NSLog(@"查询供应商详情成功");
+            NSLog(@"%@,%@",responseJSON[@"data"],[NSThread currentThread]); //主线程
+            _supplierNamefiled.text = responseJSON[@"data"][@"supplier_name"];
+            _connectNameFiled.text = responseJSON[@"data"][@"contact"];
+            _ConnectPhoneFiled.text = responseJSON[@"data"][@"contact_mobile"];
+            _addressFiled.text = responseJSON[@"data"][@"supplier_address"];
+            [self.view setNeedsLayout];
+            [self.view setNeedsDisplay];
+        }else{
+            NSLog(@"查询供应商详情失败");
+        }
+    } failure:nil];
 }
 
 - (void)editSupplierClick
@@ -57,8 +79,29 @@
 {
     _saveBtn.hidden = YES;
     //将数据上传服务器保存
-    
-    
+    NSDictionary *dic = @{
+                          @"username":username,
+                          @"shop_no":shop_no,
+                          @"supplyinfo":@{
+                                  @"id":@(1),
+                                  @"shop_no":@(10),
+                                  @"supplier_no":@(10),
+                                  @"supplier_name":_supplierNamefiled.text,
+                                  @"supplier_address":_addressFiled.text,
+                                  @"contact":_connectNameFiled.text,
+                                  @"contact_mobile":_ConnectPhoneFiled.text,
+                                  @"description":@"",
+                                  @"remark":@""
+                           }
+                          };
+    [SZHttpsRequest postJSONWithURL:supplierModifeUrl params:dic success:^(id responseJSON) {
+        if ([responseJSON[@"code"] isEqual:@(0)]) {
+            NSLog(@"修改供应商详情成功");
+            NSLog(@"%@,%@",responseJSON[@"data"],[NSThread currentThread]);
+        }else{
+            NSLog(@"修改供应商详情失败%@",responseJSON);
+        }
+    } failure:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches

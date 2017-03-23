@@ -39,9 +39,10 @@
 {
     //TODO：customer_no 什么鬼？？？
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    NSString *shop_no = [[NSUserDefaults standardUserDefaults] objectForKey:@"shop_no"];
     NSDictionary *dic = @{
                           @"username":username,
-                          @"shop_no":@(10),
+                          @"shop_no":shop_no,
                           @"customer_no":@(10)
                           };
     [SZHttpsRequest postJSONWithURL:customerPersonalDetailUrl params:dic success:^(id responseJSON) {

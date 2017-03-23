@@ -101,8 +101,11 @@ static  NSString *const ID = @"cell";
 - (void)setupTopTitleView
 {
     //创建UIScrollview
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 44)];
-    scrollView.backgroundColor = SZColor(240, 240, 240);
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 45)];
+    scrollView.backgroundColor = [UIColor whiteColor];
+    UIView *grayView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, SCREEN_W, 1)];
+    grayView.backgroundColor = SZColor(240, 240, 240);
+    [scrollView addSubview:grayView];
     scrollView.scrollsToTop = NO;//取消不需要的scrollview，只保留一个需要的
     _topScrollView = scrollView;
     [self.view addSubview:scrollView];
@@ -114,7 +117,7 @@ static  NSString *const ID = @"cell";
     NSInteger count = self.childViewControllers.count;
     if (count == 2) {
         UIView *marginView = [[UIView alloc] init];
-        marginView.frame = CGRectMake((SCREEN_W - 1) * 0.5, 2, 1, 40);
+        marginView.frame = CGRectMake((SCREEN_W - 1) * 0.5, 3, 1, 39);
         marginView.backgroundColor = SZColor(240, 240, 240);
         [_topScrollView addSubview:marginView];
     }
