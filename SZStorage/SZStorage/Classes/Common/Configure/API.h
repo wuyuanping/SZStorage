@@ -27,7 +27,7 @@
 #define selectCustomerUrl @"http://st.kingnzo.com/customer/customerlist"
 #define editCustomerUrl @"http://st.kingnzo.com/customer/customermod"
 #define deleteCustomerUrl @"http://st.kingnzo.com/customer/customerdel"
-
+#define customerPersonalDetailUrl @"http://st.kingnzo.com/customer/customerinfo"
 
 
 

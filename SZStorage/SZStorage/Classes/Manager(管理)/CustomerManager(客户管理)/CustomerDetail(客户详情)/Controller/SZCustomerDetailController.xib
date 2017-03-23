@@ -13,8 +13,7 @@
             <connections>
                 <outlet property="addressFiled" destination="Afj-ng-qEY" id="5wX-Jh-CTf"/>
                 <outlet property="connectPersonFiled" destination="ba6-2R-J2N" id="Nsf-8a-vVm"/>
-                <outlet property="connectPersonLabel" destination="ba6-2R-J2N" id="rc7-h2-f2O"/>
-                <outlet property="cuetomerNameFiled" destination="1bg-f3-hrN" id="oGe-EN-ksN"/>
+                <outlet property="customerNameFiled" destination="1bg-f3-hrN" id="32d-x6-Q8E"/>
                 <outlet property="customerTag" destination="nO7-FZ-H2M" id="kNf-hE-3x5"/>
                 <outlet property="phoneFiled" destination="Lg4-gT-U1K" id="amh-4l-tk6"/>
                 <outlet property="view" destination="hg9-jV-6kM" id="Ugy-HH-9fc"/>

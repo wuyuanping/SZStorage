@@ -17,6 +17,7 @@
 		AA04AFDD1E7BCFF5003EDB44 /* SZWhiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */; };
 		AA04AFDE1E7BCFF5003EDB44 /* SZWhiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */; };
 		AA04AFE01E7C2269003EDB44 /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDF1E7C2269003EDB44 /* Main.xcassets */; };
+		AA2F85291E83771600807230 /* SZCustomerDetilItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2F85281E83771600807230 /* SZCustomerDetilItem.m */; };
 		AA39B3111E822EBF00FCADFD /* SZCustomerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39B3101E822EBF00FCADFD /* SZCustomerItem.m */; };
 		AA39B3161E827CDE00FCADFD /* TruckOut.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA39B3151E827CDE00FCADFD /* TruckOut.xcassets */; };
 		AA438D961E7A78DA0087D20A /* SZWeChatLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA438D941E7A78DA0087D20A /* SZWeChatLoginController.m */; };
@@ -143,6 +144,8 @@
 		AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWhiteViewController.m; sourceTree = "<group>"; };
 		AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZWhiteViewController.xib; sourceTree = "<group>"; };
 		AA04AFDF1E7C2269003EDB44 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
+		AA2F85271E83771600807230 /* SZCustomerDetilItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCustomerDetilItem.h; sourceTree = "<group>"; };
+		AA2F85281E83771600807230 /* SZCustomerDetilItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCustomerDetilItem.m; sourceTree = "<group>"; };
 		AA39B30F1E822EBF00FCADFD /* SZCustomerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCustomerItem.h; sourceTree = "<group>"; };
 		AA39B3101E822EBF00FCADFD /* SZCustomerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCustomerItem.m; sourceTree = "<group>"; };
 		AA39B3151E827CDE00FCADFD /* TruckOut.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TruckOut.xcassets; sourceTree = "<group>"; };
@@ -1003,6 +1006,8 @@
 		AA5584B31E80234700A1E164 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA2F85271E83771600807230 /* SZCustomerDetilItem.h */,
+				AA2F85281E83771600807230 /* SZCustomerDetilItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2061,6 +2066,7 @@
 				AA5584AA1E801B1F00A1E164 /* SZSupplierDetailController.m in Sources */,
 				AA493F0E1E7D6F99002CF24D /* SZSelectCell.m in Sources */,
 				AAFE68C51E764A9F00A03036 /* SZFileManager.m in Sources */,
+				AA2F85291E83771600807230 /* SZCustomerDetilItem.m in Sources */,
 				AA44EB7D1E812AB000124BA3 /* SZInputController.m in Sources */,
 				AA493ED51E7D09FB002CF24D /* UITextField+SZPlaceholder.m in Sources */,
 				AA733FF41E7F898100215A71 /* SZCreatePersonalStorageController.m in Sources */,

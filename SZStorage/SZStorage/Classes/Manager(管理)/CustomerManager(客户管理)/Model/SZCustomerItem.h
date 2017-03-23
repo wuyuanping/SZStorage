@@ -10,8 +10,8 @@
 
 @interface SZCustomerItem : NSObject
 
-@property (nonatomic,copy) NSString *customer_name;
+@property (nonatomic,strong) NSString *customer_name;
 @property (nonatomic,assign) NSString* customer_mobile;
-@property (nonatomic,copy) NSString *shop_name;
+@property (nonatomic,strong) NSString *shop_name;
 
 @end

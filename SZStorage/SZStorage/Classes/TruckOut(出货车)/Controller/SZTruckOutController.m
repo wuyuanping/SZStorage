@@ -11,7 +11,7 @@
 @interface SZTruckOutController ()
 @property (nonatomic ,weak) CALayer *fistLayer;
 @property (strong, nonatomic)  NSMutableArray *imageArray;
-
+@property (nonatomic,weak) NSTimer *timer;
 @end
 
 @implementation SZTruckOutController
@@ -45,7 +45,7 @@
     self.imageArray = imageArray;
     
     //添加定时器（鱼不停地换图片身体摆动才感觉是活的）
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
+   _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
     
     [self fishPlay];
 }
@@ -87,5 +87,12 @@ static int _imageIndex = 0;
 {
     [self fishPlay];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [_timer invalidate];
+    _timer = nil;
+};
+
 
 @end

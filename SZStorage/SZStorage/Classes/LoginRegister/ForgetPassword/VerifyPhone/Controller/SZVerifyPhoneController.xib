@@ -32,10 +32,9 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLA-YP-Q5v">
-                            <rect key="frame" x="10" y="22" width="33" height="32"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="返回">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLA-YP-Q5v">
+                            <rect key="frame" x="10" y="32" width="13" height="22"/>
+                            <state key="normal" image="icon_顶部栏_返回">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -66,10 +65,10 @@
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_注册_手机" translatesAutoresizingMaskIntoConstraints="NO" id="nrt-ko-wAh">
-                            <rect key="frame" x="0.0" y="11" width="13" height="23"/>
+                            <rect key="frame" x="0.0" y="11" width="15" height="23"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx5-YR-6if">
-                            <rect key="frame" x="43" y="12.5" width="247" height="20"/>
+                            <rect key="frame" x="45" y="12.5" width="245" height="20"/>
                             <color key="textColor" red="0.13725490200000001" green="0.54901960780000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
@@ -175,8 +174,9 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_注册_手机" width="13" height="23"/>
+        <image name="icon_注册_手机" width="15" height="23"/>
         <image name="icon_注册_验证码" width="16" height="19"/>
         <image name="icon_速致仓储logo" width="90" height="90"/>
+        <image name="icon_顶部栏_返回" width="13" height="22"/>
     </resources>
 </document>

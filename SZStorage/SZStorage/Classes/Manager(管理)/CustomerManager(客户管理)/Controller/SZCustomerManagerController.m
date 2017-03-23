@@ -17,13 +17,12 @@
 @property (nonatomic,strong) NSMutableArray *ItemArray;
 
 //用户保存总页数
-//@property (nonatomic,copy) NSString *maxPage;
-@property (nonatomic, weak) AFHTTPSessionManager *mgr; //解决上下拉刷新。
-
+@property (nonatomic,assign) NSInteger maxPage;
+@property (nonatomic, weak) AFHTTPSessionManager *mgr; //解决上下拉刷新冲突。
 
 @end
 static NSString *username = nil;
-//static NSInteger pageIndex = 1;
+static NSInteger pageIndex = 1;
 @implementation SZCustomerManagerController
 
 - (NSMutableArray *)ItemArray
@@ -34,9 +33,9 @@ static NSString *username = nil;
     return _ItemArray;
 }
 
-- (AFHTTPSessionManager *)mgr{
-    
-    if (_mgr == nil) {
+- (AFHTTPSessionManager *)mgr
+{
+    if (!_mgr) {
         _mgr = [AFHTTPSessionManager manager];
     }
     return _mgr;
@@ -47,17 +46,21 @@ static NSString *username = nil;
     [super viewDidLoad];
     [self setup];
     [self loadNewData];
-    // 2.添加上下拉刷新
+    // 添加上下拉刷新
     [self setupRefreshView];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setup
 {
     self.navigationItem.title = @"客户管理";
-    UIBarButtonItem *pencil = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_编辑") selImage:IMAGE_NAMED(@"icon_商品管理_编辑") target:self action:@selector(newBulidBtnClick)];
-    self.navigationItem.rightBarButtonItems = @[pencil];
-    [SVProgressHUD showWithStatus:@"正在加载数据"];
+    UIBarButtonItem *newBuild = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_新建客户") selImage:IMAGE_NAMED(@"icon_商品管理_新建客户") target:self action:@selector(newBulidBtnClick)];
+    self.navigationItem.rightBarButtonItem = newBuild;
 }
 
 - (void)loadNewData
@@ -65,7 +68,6 @@ static NSString *username = nil;
     // 1.取消之前请求（解决上下拉刷新冲突！！！）
     [self.mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
     username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-    NSLog(@"%@",username);
     NSDictionary *dic = @{
                           @"username":username,
                           @"shop_no":@(10),
@@ -75,16 +77,15 @@ static NSString *username = nil;
                           };
     YPWeakSelf ;
     // 2.发送请求
+    self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     [self.mgr POST:selectCustomerUrl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
         NSLog(@"%@",responseObject);
         if([responseObject[@"code"] isEqual:@(0)]){
             NSLog(@"查询成功");
-            [SVProgressHUD dismiss];
             //结束头部刷新
             [self.tableView.mj_header endRefreshing];
            //保存总页数
-//            _maxPage = responseObject[@"all_page"];
+            _maxPage = (NSInteger)responseObject[@"data"][@"all_page"];
             NSLog(@"responseObject = %@",responseObject);
             if (responseObject[@"data"][@"datalist"]) {
                 self.ItemArray = [SZCustomerItem  mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"datalist"]];
@@ -116,10 +117,13 @@ static NSString *username = nil;
 
 - (void)loadMoreData
 {
-//    pageIndex ++;
-//    if (pageIndex == _maxPage + 1) {
-//        pageIndex = 1;
-//    }
+    pageIndex ++;
+    if (pageIndex == _maxPage) {
+        //移除尾部刷新控件
+        pageIndex = 1;
+        self.tableView.mj_footer.hidden = YES;
+        return ;
+    }
     // 1.取消之前请求（解决上下拉刷新冲突）
     [self.mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
     
@@ -128,7 +132,7 @@ static NSString *username = nil;
                           @"username":username,
                           @"shop_no":@(10),
                           @"key_word":@"",
-                          @"page_num":@(2),
+                          @"page_num":@(pageIndex),
                           @"page_size":@(10)
                           };
     YPWeakSelf ;
@@ -184,7 +188,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SZCustomerDetailController *customerDetVC = [[SZCustomerDetailController alloc] init];
-//    customerDetVC.item = _ItemArray[indexPath.row];
     [self.navigationController pushViewController:customerDetVC animated:YES];
 }
 

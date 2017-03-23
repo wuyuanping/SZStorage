@@ -32,10 +32,11 @@
     }
     return cell;
 }
-
+ 
 - (void)setItem:(SZCustomerItem *)item
 {
     if (item) {
+        // TODO：拖动异常崩溃！！！
         _shopNameLabel.text = item.customer_name;
         _PhoneLabel.text = item.customer_mobile;
 //        _customerNameLabel.text = @"暂无";
