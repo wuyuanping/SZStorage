@@ -37,8 +37,7 @@ static NSString *shop_no = nil;
     _ConnectPhoneFiled.userInteractionEnabled = NO;
     _addressFiled.userInteractionEnabled = NO;
     _saveBtn.hidden = YES;
-    UIBarButtonItem *pencil = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") selImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") target:self action:@selector(editSupplierClick)];
-    self.navigationItem.rightBarButtonItem = pencil;
+    [self addRightEditSupplierBtn];
 }
 
 - (void)loadData
@@ -54,10 +53,10 @@ static NSString *shop_no = nil;
         if ([responseJSON[@"code"] isEqual:@(0)]) {
             NSLog(@"查询供应商详情成功");
             NSLog(@"%@,%@",responseJSON[@"data"],[NSThread currentThread]); //主线程
-            _supplierNamefiled.text = responseJSON[@"data"][@"supplier_name"];
-            _connectNameFiled.text = responseJSON[@"data"][@"contact"];
-            _ConnectPhoneFiled.text = responseJSON[@"data"][@"contact_mobile"];
-            _addressFiled.text = responseJSON[@"data"][@"supplier_address"];
+            _supplierNamefiled.placeholder = responseJSON[@"data"][@"supplier_name"];
+            _connectNameFiled.placeholder = responseJSON[@"data"][@"contact"];
+            _ConnectPhoneFiled.placeholder = responseJSON[@"data"][@"contact_mobile"];
+            _addressFiled.placeholder = responseJSON[@"data"][@"supplier_address"];
             [self.view setNeedsLayout];
             [self.view setNeedsDisplay];
         }else{
@@ -66,8 +65,16 @@ static NSString *shop_no = nil;
     } failure:nil];
 }
 
+- (void)addRightEditSupplierBtn
+{
+    UIBarButtonItem *pencil = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") selImage:IMAGE_NAMED(@"icon_商品管理_编辑供应商") target:self action:@selector(editSupplierClick)];
+    self.navigationItem.rightBarButtonItem = pencil;
+}
+
 - (void)editSupplierClick
 {
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.title = @"编辑供应商";
     _supplierNamefiled.userInteractionEnabled = YES;
     _connectNameFiled.userInteractionEnabled = YES;
     _ConnectPhoneFiled.userInteractionEnabled = YES;
@@ -78,6 +85,11 @@ static NSString *shop_no = nil;
 - (IBAction)saveBtnClick
 {
     _saveBtn.hidden = YES;
+    [self addRightEditSupplierBtn];
+    _supplierNamefiled.userInteractionEnabled = NO;
+    _connectNameFiled.userInteractionEnabled = NO;
+    _ConnectPhoneFiled.userInteractionEnabled = NO;
+    _addressFiled.userInteractionEnabled = NO;
     //将数据上传服务器保存
     NSDictionary *dic = @{
                           @"username":username,

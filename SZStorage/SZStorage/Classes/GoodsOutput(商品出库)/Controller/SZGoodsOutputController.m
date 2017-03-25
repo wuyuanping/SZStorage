@@ -67,6 +67,7 @@
 
 - (void)setUp
 {
+    _showNoneView.hidden = YES;
     self.navigationItem.title = @"商品出库";
     self.view.backgroundColor = SZColor(240, 240, 240);
     _sortKinds.backgroundColor = SZColor(255, 255, 255);
@@ -137,7 +138,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

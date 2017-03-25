@@ -28,6 +28,7 @@ static NSString * const ID = @"cell";
     SZOutputCell *cell = [tableView  dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

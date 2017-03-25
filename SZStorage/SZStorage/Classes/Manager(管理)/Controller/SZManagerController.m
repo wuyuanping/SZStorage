@@ -10,7 +10,8 @@
 #import "SZCustomerManagerController.h"
 #import "SZStaffManagerController.h"
 #import "SZSupplierManagerController.h"
-
+#import "SZPersolalInfoController.h"
+#import "SZGoodsManagerController.h"
 
 @interface SZManagerController ()
 @property (strong, nonatomic) IBOutlet UIView *contentView;
@@ -35,7 +36,8 @@
 //商品管理
 - (IBAction)goodsManager
 {
-
+    SZGoodsManagerController *goodsManager = [[SZGoodsManagerController alloc] init];
+    [self.navigationController pushViewController:goodsManager animated:YES];
 }
 
 //入库单
@@ -80,7 +82,8 @@
 //个人信息
 - (IBAction)personalInfo
 {
-
+    SZPersolalInfoController *personalInfoVC = [[SZPersolalInfoController alloc] init];
+    [self.navigationController pushViewController:personalInfoVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -129,8 +129,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         //移除遮盖
         [coverView removeFromSuperview];
     }];
-    
-    
 }
 
 
