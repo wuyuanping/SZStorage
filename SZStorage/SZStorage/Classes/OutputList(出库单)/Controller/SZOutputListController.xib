@@ -45,11 +45,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-07-n4F">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_出库单_悬浮按钮_正常" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-yE-ApO">
-                            <rect key="frame" x="150" y="70" width="75" height="60"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_入库单_空白单据" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-yE-ApO">
+                            <rect key="frame" x="150" y="70" width="75" height="91"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无出库单，快去创建吧~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-04-k3A">
-                            <rect key="frame" x="93.5" y="180" width="189" height="19.5"/>
+                            <rect key="frame" x="93.5" y="211" width="189" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -85,6 +85,7 @@
         </view>
     </objects>
     <resources>
+        <image name="icon_入库单_空白单据" width="71" height="91"/>
         <image name="icon_出库单_悬浮按钮_正常" width="60" height="60"/>
         <image name="icon_出库单_悬浮按钮_选中" width="60" height="60"/>
     </resources>

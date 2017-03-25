@@ -34,6 +34,7 @@
 
 - (void)setItem:(id)item
 {
+    _item = item;
     _OrderLabel.text = item;
 }
 

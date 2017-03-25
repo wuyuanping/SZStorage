@@ -7,6 +7,7 @@
 //
 
 #import "SZGoodsSourceController.h"
+#import "SZGoodsInputCell.h"
 
 @interface SZGoodsSourceController ()
 
@@ -17,7 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self setup];
+}
+
+- (void)setup
+{
+    self.view.backgroundColor = SZColor(240, 240, 240);
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,13 +32,39 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 3;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SZGoodsInputCell *cell = [SZGoodsInputCell cellWithTableView:tableView];
+    //TODO
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath) {
+    
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  140;
+}
 
 
 @end

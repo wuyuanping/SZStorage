@@ -38,9 +38,10 @@
 
 - (void)setItem:(SZSupplierItem *)item
 {
-    _supplierNameLabel.text = item.supplier_name;
-    _connectNameLabel.text = item.contact;
-    _connectPhoneLabel.text = item.contact_mobile;
+    _item = item;
+    _supplierNameLabel.text = _item.supplier_name;
+    _connectNameLabel.text = _item.contact;
+    _connectPhoneLabel.text = _item.contact_mobile;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

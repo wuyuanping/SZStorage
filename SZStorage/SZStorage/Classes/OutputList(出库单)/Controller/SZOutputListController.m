@@ -38,6 +38,7 @@
     //添加搜索框
     self.searchBar.frame = CGRectMake(0, 0, kScreenBounds.size.width, 44);
     [_searchView addSubview:_searchBar];
+    _noneContentView.hidden = YES;
 }
 
 #pragma mark - 搜索框 getter

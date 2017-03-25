@@ -52,7 +52,7 @@ static NSInteger pageIndex = 1;
 - (void)viewWillAppear:(BOOL)animated
 {
     //一进来和回到这里都会来
-   BOOL isSaved = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedCustomer"];
+   BOOL isSaved = [[NSUserDefaults standardUserDefaults] boolForKey:@"savedCustomer"];
     if (isSaved) {
 //        [self loadNewData];
         [self.tableView.mj_header beginRefreshing];

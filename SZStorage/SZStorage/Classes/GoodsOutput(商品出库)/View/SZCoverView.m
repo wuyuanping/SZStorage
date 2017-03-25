@@ -30,14 +30,26 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches
            withEvent:(UIEvent *)event
 {
-    [self removeFromSuperview];
     //发出通知(匿名通知)
     [[NSNotificationCenter defaultCenter] postNotificationName:@"removeCover" object:nil];
-    
-//    if ([self.delegate respondsToSelector:@selector(coverViewDidClose:)]) {
-//        [self.delegate coverViewDidClose:self];
-//    }
+    if ([self.delegate respondsToSelector:@selector(coverViewDidClose:)]) {
+        [self.delegate coverViewDidClose:self];
+    }
+//    [self removeFromSuperview];
 }
+
++ (instancetype)showCover
+{
+    SZCoverView *cover = [[self alloc] init];
+    cover.frame = [UIScreen mainScreen].bounds;
+    cover.backgroundColor = [UIColor blackColor];
+    cover.alpha = 0.5;
+    //显示到最上方向东西都是添加到主窗口上的.
+    [[UIApplication sharedApplication].keyWindow addSubview:cover];
+    return cover;
+}
+
+
 
 
 @end

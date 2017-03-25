@@ -12,6 +12,7 @@
 #import "YPSearchBar.h"
 #import "SZCoverView.h"
 #import "SZSortKindButton.h"
+#import "SZGoodsSourceController.h"
 
 @interface SZInputController ()<UISearchBarDelegate>
 @property (nonatomic, strong) YPSearchBar *searchBar;
@@ -24,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIView *sortKind;
 @property (weak, nonatomic) IBOutlet SZSortKindButton *orderBtn; //排序按钮
 @property (weak, nonatomic) IBOutlet SZSortKindButton *selectBtn; //筛选按钮
+
+@property (weak, nonatomic) IBOutlet UIButton *sureInputBtn;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
 @end
 
 @implementation SZInputController
@@ -68,6 +73,10 @@
     
     //监听通知
     [self registerForNotifications];
+    //添加tableView
+    SZGoodsSourceController *goodsVC = [[SZGoodsSourceController alloc] init];
+    goodsVC.view.frame = CGRectMake(0, 0, SCREEN_W, _contentView.yp_height);
+    [_contentView addSubview:goodsVC.view];
 }
 
 - (void)registerForNotifications
@@ -110,7 +119,7 @@
         _searchBar = [[YPSearchBar alloc] initWithFrame:CGRectZero];
         _searchBar.cursorColor = SZColor(45, 119, 253);  //设置光标颜色
         _searchBar.backgroundColor = [UIColor whiteColor];
-        _searchBar.placeholder = @"输入商品名称首字母搜索";
+        _searchBar.placeholder = @"请输入商品名称/商品首字母搜索";
         _searchBar.textFieldBackgroundColor = SZColor(230, 230, 230);
         _searchBar.contentInset = UIEdgeInsetsMake(5, 10, 5, 10);
         _searchBar.delegate = self;
@@ -231,10 +240,22 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
     self.selectIsOpen = !self.selectIsOpen;
 }
 
-- (void)didReceiveMemoryWarning
+//确定入库按钮
+- (IBAction)sureInputBtnClick
 {
-    [super didReceiveMemoryWarning];
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
