@@ -10,12 +10,6 @@
 
 @interface SZGoodsInputCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *goodsImage;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-//库存
-@property (weak, nonatomic) IBOutlet UILabel *goodsSumLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *selecedImage;
 @property (weak, nonatomic) IBOutlet UIView *moreContentView;
 
 @end
@@ -42,8 +36,6 @@
            animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    _selecedImage.hidden = !selected;
-    _moreContentView.yp_height = selected? 180 : 0;
 }
 
 @end

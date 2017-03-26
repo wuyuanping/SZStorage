@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SZGoodsSourceController : UITableViewController
+@interface SZGoodsSourceController : SZBaseViewController
 
 @end
