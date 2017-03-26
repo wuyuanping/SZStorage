@@ -1,16 +1,14 @@
 //
-//  SZColorCell.h
+//  SZGoodsManagerCell.h
 //  SZStorage
 //
-//  Created by 吴园平 on 24/03/2017.
+//  Created by 吴园平 on 25/03/2017.
 //  Copyright © 2017 WuYuanPing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SZColorCell : UITableViewCell
-
-@property (nonatomic,strong) id item;
+@interface SZGoodsManagerCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

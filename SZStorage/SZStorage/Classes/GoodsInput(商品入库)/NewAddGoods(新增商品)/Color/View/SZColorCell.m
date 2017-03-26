@@ -44,7 +44,6 @@
     [super setSelected:selected animated:animated];
     _selectedImage.hidden = !selected;
     _colorLabel.textColor = selected ? SZColor(49, 148, 255) : SZColor(172, 172, 172);
-
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  SZGoodsManagerController.h
+//  SZEditGoodsController.h
 //  SZStorage
 //
 //  Created by 吴园平 on 25/03/2017.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SZGoodsManagerController : SZBaseViewController
+@interface SZEditGoodsController : UITableViewController
 
 @end

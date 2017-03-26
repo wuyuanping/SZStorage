@@ -18,13 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self setup];
 }
 
 - (void)setup
 {
     _ItemArray = @[@"白色",@"黑色",@"红色",@"灰色"];
-    
 }
 
 #pragma mark - Table view data source
@@ -42,6 +41,11 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
 
 
 @end

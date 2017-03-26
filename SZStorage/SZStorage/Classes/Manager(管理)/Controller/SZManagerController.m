@@ -12,6 +12,9 @@
 #import "SZSupplierManagerController.h"
 #import "SZPersolalInfoController.h"
 #import "SZGoodsManagerController.h"
+#import "SZStorageManagerController.h"
+#import "SZInputListController.h"
+#import "SZPropertySettingController.h"
 
 @interface SZManagerController ()
 @property (strong, nonatomic) IBOutlet UIView *contentView;
@@ -43,19 +46,22 @@
 //入库单
 - (IBAction)inputList
 {
-
+    SZInputListController *inputListVC = [[SZInputListController alloc] init];
+    [self.navigationController pushViewController:inputListVC animated:YES];
 }
 
 //店铺管理
 - (IBAction)storageManager
 {
-
+    SZStorageManagerController *shopManVC = [[SZStorageManagerController alloc] init];
+    [self.navigationController pushViewController:shopManVC animated:YES];
 }
 
 //属性设置
 - (IBAction)propertySetting
 {
-
+    SZPropertySettingController *propertySettingVC = [[SZPropertySettingController alloc] init];
+    [self.navigationController pushViewController:propertySettingVC animated:YES];
 }
 
 //客户管理

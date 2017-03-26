@@ -9,15 +9,68 @@
 #import "SZGoodsManagerController.h"
 #import "YPSearchBar.h"
 #import "SZCoverView.h"
+#import "SZSelectController.h"
+#import "SZOrderController.h"
+#import "SZSortKindButton.h"
+#import "SZGoodsManagerCell.h"
+#import "SZGoodsDetailController.h"
 
-@interface SZGoodsManagerController ()<UISearchBarDelegate>
+@interface SZGoodsManagerController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (nonatomic,strong) YPSearchBar *searchBar;
 @property (nonatomic,strong) SZCoverView *coverView;
+@property (nonatomic,strong) SZOrderController *OrderTableController;//排序
+@property (nonatomic,strong) SZSelectController *SelectTableController;//筛选
+
+@property (nonatomic,assign) BOOL orderIsOpen;
+@property (nonatomic,assign) BOOL selectIsOpen;
+
+@property (weak, nonatomic) IBOutlet UIView *sortKind;
+@property (weak, nonatomic) IBOutlet SZSortKindButton *orderBtn; //排序按钮
+@property (weak, nonatomic) IBOutlet SZSortKindButton *selectBtn; //筛选按钮
+
 
 @end
 
 @implementation SZGoodsManagerController
+
+#pragma mark - getter
+- (YPSearchBar *)searchBar
+{
+    if (!_searchBar) {
+        _searchBar = [[YPSearchBar alloc] initWithFrame:CGRectZero];
+        _searchBar.cursorColor = SZColor(45, 119, 253);  //设置光标颜色
+        _searchBar.backgroundColor = [UIColor whiteColor];
+        _searchBar.placeholder = @"请输入商品名称/商品名称首字母搜索";
+        _searchBar.textFieldBackgroundColor = SZColor(230, 230, 230);
+        _searchBar.contentInset = UIEdgeInsetsMake(5, 10, 5, 10);
+        _searchBar.delegate = self;
+        [_searchBar textField].enablesReturnKeyAutomatically = YES; //无文字输入就不可以点击搜索
+    }
+    return _searchBar;
+}
+
+- (SZOrderController *)OrderTableController
+{
+    if (!_OrderTableController) {
+        _OrderTableController = [[SZOrderController alloc] init];
+        _OrderTableController.tableView.contentSize = CGSizeMake(SCREEN_W, 176);
+        _OrderTableController.view.frame = CGRectMake(0, 98, SCREEN_W, 176);
+        [self.view addSubview:_OrderTableController.view];
+    }
+    return _OrderTableController;
+}
+
+- (SZSelectController *)SelectTableController
+{
+    if (!_SelectTableController) {
+        _SelectTableController = [[SZSelectController alloc] init];
+        _SelectTableController.tableView.contentSize = CGSizeMake(SCREEN_W, 176);
+        _SelectTableController.view.frame = CGRectMake(0, 98, SCREEN_W, 176);
+        [self.view addSubview:_SelectTableController.view];
+    }
+    return _SelectTableController;
+}
 
 - (void)viewDidLoad
 {
@@ -29,26 +82,76 @@
 {
     self.navigationItem.title = @"商品管理";
     self.view.backgroundColor = SZColor(240, 240, 240);
+    _sortKind.backgroundColor = SZColor(255, 255, 255);
+    UIBarButtonItem *addGoods = [UIBarButtonItem itemWithImage:IMAGE_NAMED(@"icon_商品管理_添加商品") selImage:IMAGE_NAMED(@"icon_商品管理_添加商品") target:self action:@selector(addGoodsBtnClick)];
+    self.navigationItem.rightBarButtonItem = addGoods;
     
     //添加搜索框
     self.searchBar.frame = CGRectMake(0, 0, kScreenBounds.size.width, 44);
     [_searchView addSubview:_searchBar];
+    
+    //监听通知
+    [self registerForNotifications];
 }
 
-#pragma mark - 搜索框 getter
-- (YPSearchBar *)searchBar
+- (void)addGoodsBtnClick
 {
-    if (!_searchBar) {
-        _searchBar = [[YPSearchBar alloc] initWithFrame:CGRectZero];
-        _searchBar.cursorColor = SZColor(45, 119, 253);  //设置光标颜色
-        _searchBar.backgroundColor = [UIColor whiteColor];
-        _searchBar.placeholder = @"请输入商品名称/出库单号搜索";
-        _searchBar.textFieldBackgroundColor = SZColor(230, 230, 230);
-        _searchBar.contentInset = UIEdgeInsetsMake(5, 10, 5, 10);
-        _searchBar.delegate = self;
-        [_searchBar textField].enablesReturnKeyAutomatically = YES; //无文字输入就不可以点击搜索
+
+}
+
+
+- (void)registerForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changedOrder:) name:@"changOrder" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignTextFiled) name:@"removeCover" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeSelectTableView) name:@"selected" object:nil];
+}
+
+- (void)unregisterFromNotifications
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self name:@"changOrder" object:nil];
+    [nc removeObserver:self name:@"removeCover" object:nil];
+    [nc removeObserver:self name:@"selected" object:nil];
+}
+
+- (void)changedOrder:(NSNotification *)note
+{
+    _orderBtn.titleLabel.text = note.userInfo[@"order"];
+    [self orderBtnClick];
+}
+
+- (void)closeSelectTableView
+{
+    [self selectBtnClick];
+}
+
+- (void)resignTextFiled
+{
+    [_searchBar resignFirstResponder];
+    _searchBar.showsCancelButton = NO;
+}
+
+//点击排序
+- (IBAction)orderBtnClick
+{
+    if (self.orderIsOpen) {//默认所有属性初始化都为0，即假
+        self.OrderTableController.view.height = 0;
+    }else{
+        self.OrderTableController.view.height = 176;
     }
-    return _searchBar;
+    self.orderIsOpen = !self.orderIsOpen;
+}
+
+//点击筛选
+- (IBAction)selectBtnClick
+{
+    if (self.selectIsOpen) {
+        self.SelectTableController.view.height = 0;
+    }else{
+        self.SelectTableController.view.height = 176;
+    }
+    self.selectIsOpen = !self.selectIsOpen;
 }
 
 #pragma mark - UISearchBar Delegate
@@ -141,9 +244,32 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 
 
 #pragma mark - Table view data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SZGoodsManagerCell *goodsManCell = [SZGoodsManagerCell cellWithTableView:tableView];
+    //TODO
+    
+    return goodsManCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 140;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SZGoodsDetailController *detailVC = [[SZGoodsDetailController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -151,5 +277,9 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc
+{
+    [self unregisterFromNotifications];
+}
 
 @end

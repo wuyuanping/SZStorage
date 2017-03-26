@@ -11,6 +11,7 @@
 #import "SZUnitView.h"
 #import "SZCoverView.h"
 #import "SZColorController.h"
+#import "SZGoodsManagerController.h"
 
 @interface SZNewAddGoodsController ()<SZCoverViewDelegate>
 @property (nonatomic,strong) UIView *BtnView;
@@ -56,7 +57,10 @@
 
 - (void)saveBtnClick
 {
-
+    //跳转到商品管理
+    SZGoodsManagerController *goodsManVC = [[SZGoodsManagerController alloc] init];
+    [self.navigationController pushViewController:goodsManVC animated:YES];
+    //TODO:数据传服务器
 }
 
 - (void)saveAndAddBtnClick
@@ -109,13 +113,26 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         if (indexPath.row == 4) {
             SZCoverView *coverV =  [SZCoverView showCover];
             coverV.delegate = self;
-//                _colorVC = [[SZColorController alloc] init];
-//                _colorVC.tableView.contentSize = CGSizeMake(SCREEN_W, 220);
-//            [self.navigationController  presentViewController:_colorVC animated:YES completion:nil];
+            _colorVC = [[SZColorController alloc] init];
+            [self.navigationController presentViewController:_colorVC animated:YES completion:nil];
+//            [self presentColorVC];
             }
         }
     NSLog(@"点击了:%ld",indexPath.row);
 }
+
+//- (void)presentColorVC
+//{
+//    _colorVC.view.yp_y = SCREEN_H;
+//    _colorVC.view.yp_width = SCREEN_W;
+//    [[UIApplication sharedApplication].keyWindow addSubview:_colorVC.view];
+//    [UIView animateWithDuration:0.25 animations:^{
+//        _colorVC.view.yp_y = SCREEN_H - _colorVC.view.yp_height;
+//    }];
+//
+//}
+
+
 
 #pragma mark - 遮盖代理方法
 - (void)coverViewDidClose:(SZCoverView *)coverView

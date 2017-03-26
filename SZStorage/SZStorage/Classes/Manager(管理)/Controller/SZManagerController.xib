@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SZManagerController">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="T9Z-Q0-ICQ"/>
-                <outlet property="view" destination="iN0-l3-epB" id="FC9-Qy-wTg"/>
+                <outlet property="view" destination="iN0-l3-epB" id="1KK-Lg-dpz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +33,7 @@
                     </constraints>
                     <state key="normal" image="icon_管理_商品管理"/>
                     <connections>
-                        <action selector="goodsManager" destination="-1" eventType="touchUpInside" id="hh0-D8-WfZ"/>
+                        <action selector="goodsManager" destination="-1" eventType="touchUpInside" id="y53-8m-rCV"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-xZ-USe">

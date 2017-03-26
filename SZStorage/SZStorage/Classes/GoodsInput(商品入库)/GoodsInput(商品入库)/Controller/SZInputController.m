@@ -112,6 +112,29 @@
 //    [ removeFromSuperview];
 }
 
+//点击排序
+- (IBAction)orderBtnClick
+{
+    if (self.orderIsOpen) {//默认所有属性初始化都为0，即假
+        self.OrderTableController.view.height = 0;
+    }else{
+        self.OrderTableController.view.height = 176;
+    }
+    self.orderIsOpen = !self.orderIsOpen;
+}
+
+//点击筛选
+- (IBAction)selectBtnClick
+{
+    if (self.selectIsOpen) {
+        self.SelectTableController.view.height = 0;
+    }else{
+        self.SelectTableController.view.height = 176;
+    }
+    self.selectIsOpen = !self.selectIsOpen;
+}
+
+
 #pragma mark - 搜索框 getter
 - (YPSearchBar *)searchBar
 {
@@ -217,45 +240,11 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 }
 
 
-//点击排序
-- (IBAction)orderBtnClick
-{
-    if (self.orderIsOpen) {//默认所有属性初始化都为0，即假
-        self.OrderTableController.view.height = 0;
-        }else{
-       
-        self.OrderTableController.view.height = 176;
-    }
-    self.orderIsOpen = !self.orderIsOpen;
-}
-
-//点击筛选
-- (IBAction)selectBtnClick
-{
-    if (self.selectIsOpen) {
-        self.SelectTableController.view.height = 0;
-        }else{
-        self.SelectTableController.view.height = 176;
-    }
-    self.selectIsOpen = !self.selectIsOpen;
-}
-
 //确定入库按钮
 - (IBAction)sureInputBtnClick
 {
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
