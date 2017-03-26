@@ -12,9 +12,14 @@
 #import "YPSearchBar.h"
 #import "SZCoverView.h"
 #import "SZSortKindButton.h"
-#import "SZGoodsSourceController.h"
+#import "SZGoodsInputCell.h"
 
-@interface SZInputController ()<UISearchBarDelegate>
+
+@interface SZInputController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    BOOL unshow[0];//判断是否展开的数组
+}
+
 @property (nonatomic, strong) YPSearchBar *searchBar;
 @property (nonatomic,strong) SZOrderController *OrderTableController;//排序
 @property (nonatomic,strong) SZSelectController *SelectTableController;//筛选
@@ -27,7 +32,7 @@
 @property (weak, nonatomic) IBOutlet SZSortKindButton *selectBtn; //筛选按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *sureInputBtn;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet SZBaseTableView *tableView;
 
 @end
 
@@ -73,10 +78,6 @@
     
     //监听通知
     [self registerForNotifications];
-    //添加tableView
-    SZGoodsSourceController *goodsVC = [[SZGoodsSourceController alloc] init];
-    goodsVC.view.frame = CGRectMake(0, 0, SCREEN_W, _contentView.yp_height);
-    [_contentView addSubview:goodsVC.view];
 }
 
 - (void)registerForNotifications
@@ -109,7 +110,6 @@
 {
     [_searchBar resignFirstResponder];
     _searchBar.showsCancelButton = NO;
-//    [ removeFromSuperview];
 }
 
 //点击排序
@@ -239,7 +239,6 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
     NSLog(@"%s",__func__);
 }
 
-
 //确定入库按钮
 - (IBAction)sureInputBtnClick
 {
@@ -265,6 +264,87 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
         _SelectTableController.view.height = 0;
     }
 }
+
+#pragma mark - UITableViewDatasource & UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 4;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    if (!unshow[section]) {
+        return 0;
+    }
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 220;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SZGoodsInputCell *cell = [SZGoodsInputCell cellWithTableView:tableView];
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView
+viewForHeaderInSection:(NSInteger)section
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"点哦" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.tag = section;
+    [btn addTarget:self action:@selector(expand:) forControlEvents:UIControlEventTouchUpInside];
+    return  btn;
+}
+
+- (void)expand:(UIButton *)sender {
+    NSInteger section = sender.tag;
+    unshow[sender.tag] = !unshow[sender.tag];
+    
+    //重新加载
+    NSIndexSet *indexset = [NSIndexSet  indexSetWithIndex:section];
+    [_tableView reloadSections:indexset withRowAnimation:UITableViewRowAnimationFade];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (void)dealloc
 {
     [self unregisterFromNotifications];
