@@ -13,11 +13,11 @@
 #import "SZCoverView.h"
 #import "SZSortKindButton.h"
 #import "SZGoodsInputCell.h"
-
+#import "SZGoodsInputHeaderView.h"
 
 @interface SZInputController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 {
-    BOOL unshow[0];//判断是否展开的数组
+    BOOL unshow[10];//判断是否展开的数组
 }
 
 @property (nonatomic, strong) YPSearchBar *searchBar;
@@ -71,7 +71,6 @@
     self.navigationItem.title = @"商品入库";
     self.view.backgroundColor = SZColor(240, 240, 240);
     _sortKind.backgroundColor = SZColor(255, 255, 255);
- 
     //添加搜索框
     self.searchBar.frame = CGRectMake(0, 0, kScreenBounds.size.width, 44);
     [_searchView addSubview:_searchBar];
@@ -277,7 +276,7 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
     if (!unshow[section]) {
         return 0;
     }
-    return 1;
+    return 1; //每组返回一个cell
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -302,12 +301,14 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section
 {
+    SZGoodsInputHeaderView *headerView = [SZGoodsInputHeaderView viewForXib];
+    headerView.tag = section;
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"点哦" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.bounds = headerView.bounds;
     btn.tag = section;
     [btn addTarget:self action:@selector(expand:) forControlEvents:UIControlEventTouchUpInside];
-    return  btn;
+    [headerView addSubview:btn];
+    return headerView;
 }
 
 - (void)expand:(UIButton *)sender {
