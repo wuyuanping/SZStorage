@@ -16,9 +16,7 @@
 #import "SZGoodsInputHeaderView.h"
 
 @interface SZInputController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
-{
-    BOOL unshow[10];//判断是否展开的数组
-}
+
 
 @property (nonatomic, strong) YPSearchBar *searchBar;
 @property (nonatomic,strong) SZOrderController *OrderTableController;//排序
@@ -32,7 +30,11 @@
 @property (weak, nonatomic) IBOutlet SZSortKindButton *selectBtn; //筛选按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *sureInputBtn;
+
 @property (weak, nonatomic) IBOutlet SZBaseTableView *tableView;
+@property (nonatomic,strong) NSMutableArray *dataArr;
+@property (nonatomic,assign) BOOL *isOpen;
+@property (nonatomic,assign) NSIndexPath *selectIndex;
 
 @end
 
@@ -71,6 +73,7 @@
     self.navigationItem.title = @"商品入库";
     self.view.backgroundColor = SZColor(240, 240, 240);
     _sortKind.backgroundColor = SZColor(255, 255, 255);
+    self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
     //添加搜索框
     self.searchBar.frame = CGRectMake(0, 0, kScreenBounds.size.width, 44);
     [_searchView addSubview:_searchBar];
@@ -132,7 +135,6 @@
     }
     self.selectIsOpen = !self.selectIsOpen;
 }
-
 
 #pragma mark - 搜索框 getter
 - (YPSearchBar *)searchBar
@@ -267,58 +269,140 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 #pragma mark - UITableViewDatasource & UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    if (!unshow[section]) {
-        return 0;
+    if (_isOpen && _selectIndex.section == section) {
+        return 2;
     }
-    return 1; //每组返回一个cell
-}
-
-- (CGFloat)tableView:(UITableView *)tableView
-heightForFooterInSection:(NSInteger)section
-{
-    return 10;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 220;
+    if (_isOpen && _selectIndex.section == indexPath.section && indexPath.row != 0) {
+        return 224;
+    }
+    return 140;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section
 {
-    SZGoodsInputCell *cell = [SZGoodsInputCell cellWithTableView:tableView];
-    return cell;
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section{
+    return 0.5;
 }
 
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section
 {
-    SZGoodsInputHeaderView *headerView = [SZGoodsInputHeaderView viewForXib];
-    headerView.tag = section;
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.bounds = headerView.bounds;
-    btn.tag = section;
-    [btn addTarget:self action:@selector(expand:) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:btn];
-    return headerView;
+    return nil;
 }
 
-- (void)expand:(UIButton *)sender {
-    NSInteger section = sender.tag;
-    unshow[sender.tag] = !unshow[sender.tag];
-    
-    //重新加载
-    NSIndexSet *indexset = [NSIndexSet  indexSetWithIndex:section];
-    [_tableView reloadSections:indexset withRowAnimation:UITableViewRowAnimationFade];
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self gerenateTablecell:tableView indexpath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
+
+-(UITableViewCell *)gerenateTablecell:(UITableView *)tableView
+                            indexpath:(NSIndexPath *)indexpath
+{
+    
+    if (_isOpen && _selectIndex.section == indexpath.section && indexpath.row != 0) {
+        SZGoodsInputCell *cell = [SZGoodsInputCell cellWithTableView:tableView];
+        return cell;
+        }else{
+        SZGoodsInputHeaderView *headerCell = [SZGoodsInputHeaderView cellWithTableView:tableView];
+            return headerCell;
+        }
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect rect = [self.tableView rectForRowAtIndexPath:indexPath];
+    NSLog(@"点击cell:%@",NSStringFromCGRect(rect));
+    if (indexPath.row == 0) {
+        /**
+         *  expand cell select method
+         */
+        if ([indexPath isEqual:_selectIndex]) {
+            _isOpen = (BOOL *)NO;
+            [self didSelectCellRowFirstDo:NO nextDo:NO];
+            _selectIndex = nil;
+        }else{
+            if (!_selectIndex) {
+                _selectIndex = indexPath;
+                [self didSelectCellRowFirstDo:YES nextDo:NO];
+            }else{
+                [self didSelectCellRowFirstDo:NO nextDo:YES];
+            }
+        }
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)didSelectCellRowFirstDo:(BOOL)firstDoInsert
+                         nextDo:(BOOL)nextDoInsert
+{
+    _isOpen = (BOOL *)firstDoInsert;
+    NSMutableArray* rowToInsert = [[NSMutableArray alloc] init];
+    NSIndexPath* indexPathToInsert = [NSIndexPath indexPathForRow:1 inSection:_selectIndex.section];
+    [rowToInsert addObject:indexPathToInsert];
+    [_tableView beginUpdates];
+    if (firstDoInsert)
+    {
+        [_tableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else
+    {
+        [_tableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationFade];
+    }
+    [_tableView endUpdates];
+    if (nextDoInsert) {
+        _isOpen = (BOOL *)YES;
+        _selectIndex = [_tableView indexPathForSelectedRow];
+        [self didSelectCellRowFirstDo:YES nextDo:NO];
+    }
+    if (_isOpen){
+        [_tableView scrollToRowAtIndexPath:_selectIndex atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    }
+}
+
+- (void)startAnimation:(UIImageView *)view Up:(BOOL)up
+              complete:(void(^)())block
+{
+    if (up) {
+        [UIView animateWithDuration:0.2 animations:^{
+            view.transform = CGAffineTransformMakeRotation(M_PI);
+        } completion:^(BOOL finished) {
+            if (block) {
+                block();
+            }
+        }];
+    }else{
+        [UIView animateWithDuration:0.2 animations:^{
+            view.transform = CGAffineTransformMakeRotation(0);
+        } completion:^(BOOL finished) {
+            if (block) {
+                block();
+            }
+        }];
+    }
+}
+
+
 
 
 

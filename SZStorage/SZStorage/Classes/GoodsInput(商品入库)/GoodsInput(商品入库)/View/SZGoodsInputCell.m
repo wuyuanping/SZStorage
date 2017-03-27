@@ -7,10 +7,11 @@
 //
 
 #import "SZGoodsInputCell.h"
+#import "SZInputColorController.h"
 
 @interface SZGoodsInputCell ()
 
-@property (weak, nonatomic) IBOutlet UIView *moreContentView;
+@property (weak, nonatomic) IBOutlet UIView *middleContentView;
 
 @end
 
@@ -19,7 +20,15 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setup];
+}
 
+- (void)setup
+{
+    //添加颜色控制器
+    SZInputColorController *colorVC = [[SZInputColorController alloc] init];
+    colorVC.view.frame = CGRectMake(0, 0, SCREEN_W, 134);
+    [_middleContentView addSubview:colorVC.view];
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView

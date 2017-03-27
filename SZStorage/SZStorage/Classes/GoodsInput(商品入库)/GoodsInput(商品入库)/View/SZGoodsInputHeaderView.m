@@ -22,11 +22,24 @@
 
 @implementation SZGoodsInputHeaderView
 
-+ (instancetype)viewForXib
+
++ (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+    static NSString *ID = @"HeadViewcell";
+    SZGoodsInputHeaderView *cell = [tableView  dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+    }
+    return cell;
 }
 
+- (void)setSelected:(BOOL)selected
+           animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+//    _selecedImage.image = selected? IMAGE_NAMED(@"icon_商品出库_筛选_打勾"):IMAGE_NAMED(@"icon_商品出库_筛选_选框");
+    _selecedImage.hidden = !selected; //有毒！！
+}
 
 
 @end

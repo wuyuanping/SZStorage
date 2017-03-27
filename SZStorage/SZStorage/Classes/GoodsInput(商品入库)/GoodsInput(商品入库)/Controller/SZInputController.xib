@@ -103,7 +103,7 @@
                         <constraint firstAttribute="trailing" secondItem="s0t-YZ-iix" secondAttribute="trailing" id="znw-VB-HuD"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="140" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-cO-lGs" customClass="SZBaseTableView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-cO-lGs" customClass="SZBaseTableView">
                     <rect key="frame" x="0.0" y="99" width="375" height="524"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -115,18 +115,18 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="9fV-sO-Let" secondAttribute="trailing" id="5Nk-Or-UHZ"/>
+                <constraint firstItem="YPv-cO-lGs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5kL-OY-Mtl"/>
+                <constraint firstAttribute="trailing" secondItem="YPv-cO-lGs" secondAttribute="trailing" id="9bW-9X-88X"/>
                 <constraint firstItem="SQc-aX-wgK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Cmc-HB-F0c"/>
                 <constraint firstAttribute="trailing" secondItem="SQc-aX-wgK" secondAttribute="trailing" id="FON-hD-7Me"/>
+                <constraint firstItem="9fV-sO-Let" firstAttribute="top" secondItem="YPv-cO-lGs" secondAttribute="bottom" id="G76-vl-1wh"/>
+                <constraint firstItem="YPv-cO-lGs" firstAttribute="top" secondItem="SQc-aX-wgK" secondAttribute="bottom" constant="1" id="IuI-R9-iIG"/>
                 <constraint firstItem="WLh-6r-gdv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KOm-Xg-ZQX"/>
-                <constraint firstItem="YPv-cO-lGs" firstAttribute="top" secondItem="SQc-aX-wgK" secondAttribute="bottom" constant="1" id="RlG-Py-Fl6"/>
                 <constraint firstAttribute="trailing" secondItem="WLh-6r-gdv" secondAttribute="trailing" id="TeP-6m-DwN"/>
                 <constraint firstItem="SQc-aX-wgK" firstAttribute="top" secondItem="WLh-6r-gdv" secondAttribute="bottom" constant="10" id="WSq-aW-uZW"/>
-                <constraint firstAttribute="trailing" secondItem="YPv-cO-lGs" secondAttribute="trailing" id="bPz-mf-01d"/>
                 <constraint firstItem="9fV-sO-Let" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bQU-PD-XcV"/>
                 <constraint firstItem="WLh-6r-gdv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i6p-a3-SOs"/>
                 <constraint firstAttribute="bottom" secondItem="9fV-sO-Let" secondAttribute="bottom" id="qEa-Wm-Kt1"/>
-                <constraint firstItem="YPv-cO-lGs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vcC-vz-O3c"/>
-                <constraint firstAttribute="bottom" secondItem="YPv-cO-lGs" secondAttribute="bottom" constant="44" id="xv8-Sm-MWD"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>

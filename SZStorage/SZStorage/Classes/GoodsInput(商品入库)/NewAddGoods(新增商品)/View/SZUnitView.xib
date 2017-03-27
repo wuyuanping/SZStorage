@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SZUnitView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -146,6 +146,20 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="caseBtn" destination="PtT-hq-SPA" id="VWx-sT-elI"/>
+                <outlet property="caseImage" destination="DBX-dn-lb9" id="6u6-CY-lLe"/>
+                <outlet property="caseLabel" destination="jBg-gt-xCd" id="p5c-jz-GTF"/>
+                <outlet property="oneBtn" destination="bbm-c9-Cef" id="bCb-UD-5dn"/>
+                <outlet property="oneImage" destination="cvB-da-u3Q" id="JsA-Qs-VgT"/>
+                <outlet property="oneLabel" destination="rX9-RB-T3d" id="XSS-tl-mdH"/>
+                <outlet property="pieceBtn" destination="cHS-k4-CMN" id="JVC-bC-5xQ"/>
+                <outlet property="pieceImage" destination="4i8-ue-Awv" id="slO-tf-cM9"/>
+                <outlet property="pieceLabel" destination="Bxp-3O-WIT" id="kXA-cW-t5v"/>
+                <outlet property="twinBtn" destination="dac-2J-5aP" id="4ub-RQ-FwJ"/>
+                <outlet property="twinImage" destination="blQ-ZW-wKl" id="DAc-XQ-W0P"/>
+                <outlet property="twinLabel" destination="II6-GL-hnh" id="SD5-QN-gTH"/>
+            </connections>
             <point key="canvasLocation" x="-94.5" y="126"/>
         </view>
     </objects>

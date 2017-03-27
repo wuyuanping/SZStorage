@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="inputRed" selectionStyle="default" indentationWidth="10" id="aIX-eK-zdm" customClass="SZInputRedCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIX-eK-zdm" id="Pmt-C3-deK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ko-Kn-Orj">
+                        <rect key="frame" x="10" y="13.5" width="23.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJK-am-czA">
+                        <rect key="frame" x="284" y="8" width="26" height="28"/>
+                        <state key="normal" image="+"/>
+                        <connections>
+                            <action selector="addBtnClick" destination="aIX-eK-zdm" eventType="touchUpInside" id="hPp-Rk-j8B"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlj-Qs-QjS">
+                        <rect key="frame" x="206" y="8" width="26" height="28"/>
+                        <state key="normal" image="-"/>
+                        <connections>
+                            <action selector="minusBtnClick" destination="aIX-eK-zdm" eventType="touchUpInside" id="yyf-dx-JRw"/>
+                            <action selector="plusBtnClick" destination="aIX-eK-zdm" eventType="touchUpInside" id="tK3-c4-2np"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 2" translatesAutoresizingMaskIntoConstraints="NO" id="DFs-3T-7bv">
+                        <rect key="frame" x="232" y="8" width="52" height="28"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2q-NZ-Sqb">
+                        <rect key="frame" x="232" y="12.5" width="52" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QJK-am-czA" firstAttribute="leading" secondItem="G2q-NZ-Sqb" secondAttribute="trailing" id="0Ex-Fo-DgS"/>
+                    <constraint firstItem="QJK-am-czA" firstAttribute="leading" secondItem="DFs-3T-7bv" secondAttribute="trailing" id="6vQ-3C-65l"/>
+                    <constraint firstAttribute="trailing" secondItem="QJK-am-czA" secondAttribute="trailing" constant="10" id="Cqb-ic-v1k"/>
+                    <constraint firstItem="G2q-NZ-Sqb" firstAttribute="leading" secondItem="tlj-Qs-QjS" secondAttribute="trailing" id="EiB-BV-QUh"/>
+                    <constraint firstItem="9Ko-Kn-Orj" firstAttribute="centerY" secondItem="Pmt-C3-deK" secondAttribute="centerY" id="KcO-dM-yPJ"/>
+                    <constraint firstItem="QJK-am-czA" firstAttribute="centerY" secondItem="Pmt-C3-deK" secondAttribute="centerY" id="L5o-8O-XkE"/>
+                    <constraint firstItem="9Ko-Kn-Orj" firstAttribute="leading" secondItem="Pmt-C3-deK" secondAttribute="leading" constant="10" id="RgT-Jy-ifz"/>
+                    <constraint firstItem="DFs-3T-7bv" firstAttribute="centerY" secondItem="Pmt-C3-deK" secondAttribute="centerY" id="fEz-RW-FV7"/>
+                    <constraint firstItem="DFs-3T-7bv" firstAttribute="leading" secondItem="tlj-Qs-QjS" secondAttribute="trailing" id="ke9-82-2T6"/>
+                    <constraint firstItem="G2q-NZ-Sqb" firstAttribute="centerY" secondItem="Pmt-C3-deK" secondAttribute="centerY" id="khH-3W-Svb"/>
+                    <constraint firstItem="tlj-Qs-QjS" firstAttribute="centerY" secondItem="Pmt-C3-deK" secondAttribute="centerY" id="zKM-pW-JUw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="SizeLabel" destination="9Ko-Kn-Orj" id="dAD-5b-int"/>
+                <outlet property="quantityLabel" destination="G2q-NZ-Sqb" id="Izq-Kw-4dr"/>
+                <outlet property="sumLabel" destination="G2q-NZ-Sqb" id="we4-3f-pWR"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="+" width="26" height="28"/>
+        <image name="-" width="26" height="28"/>
+        <image name="Rectangle 2" width="52" height="28"/>
+    </resources>
+</document>

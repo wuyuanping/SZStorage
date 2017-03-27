@@ -17,6 +17,16 @@
 		AA04AFDD1E7BCFF5003EDB44 /* SZWhiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */; };
 		AA04AFDE1E7BCFF5003EDB44 /* SZWhiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */; };
 		AA04AFE01E7C2269003EDB44 /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA04AFDF1E7C2269003EDB44 /* Main.xcassets */; };
+		AA2D929D1E88E81800D01C76 /* SZInputRedController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D929B1E88E81800D01C76 /* SZInputRedController.m */; };
+		AA2D929E1E88E81800D01C76 /* SZInputRedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2D929C1E88E81800D01C76 /* SZInputRedController.xib */; };
+		AA2D92A21E88E99300D01C76 /* SZInputRedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D92A01E88E99300D01C76 /* SZInputRedCell.m */; };
+		AA2D92A31E88E99300D01C76 /* SZInputRedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2D92A11E88E99300D01C76 /* SZInputRedCell.xib */; };
+		AA2D92A71E88EB8500D01C76 /* SZInputWhiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D92A51E88EB8500D01C76 /* SZInputWhiteController.m */; };
+		AA2D92A81E88EB8500D01C76 /* SZInputWhiteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2D92A61E88EB8500D01C76 /* SZInputWhiteController.xib */; };
+		AA2D92AC1E88EBF200D01C76 /* SZInputWhiteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D92AA1E88EBF200D01C76 /* SZInputWhiteCell.m */; };
+		AA2D92AD1E88EBF200D01C76 /* SZInputWhiteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2D92AB1E88EBF200D01C76 /* SZInputWhiteCell.xib */; };
+		AA2D92B11E88ED9D00D01C76 /* SZInputColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D92AF1E88ED9D00D01C76 /* SZInputColorController.m */; };
+		AA2D92B21E88ED9D00D01C76 /* SZInputColorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2D92B01E88ED9D00D01C76 /* SZInputColorController.xib */; };
 		AA2F85291E83771600807230 /* SZCustomerDetilItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2F85281E83771600807230 /* SZCustomerDetilItem.m */; };
 		AA2F852C1E83B75900807230 /* SZSupplierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2F852B1E83B75900807230 /* SZSupplierItem.m */; };
 		AA2F852E1E84235800807230 /* OutPutList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2F852D1E84235800807230 /* OutPutList.xcassets */; };
@@ -175,6 +185,21 @@
 		AA04AFDB1E7BCFF5003EDB44 /* SZWhiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWhiteViewController.m; sourceTree = "<group>"; };
 		AA04AFDC1E7BCFF5003EDB44 /* SZWhiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZWhiteViewController.xib; sourceTree = "<group>"; };
 		AA04AFDF1E7C2269003EDB44 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
+		AA2D929A1E88E81800D01C76 /* SZInputRedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZInputRedController.h; sourceTree = "<group>"; };
+		AA2D929B1E88E81800D01C76 /* SZInputRedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZInputRedController.m; sourceTree = "<group>"; };
+		AA2D929C1E88E81800D01C76 /* SZInputRedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZInputRedController.xib; sourceTree = "<group>"; };
+		AA2D929F1E88E99300D01C76 /* SZInputRedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZInputRedCell.h; sourceTree = "<group>"; };
+		AA2D92A01E88E99300D01C76 /* SZInputRedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZInputRedCell.m; sourceTree = "<group>"; };
+		AA2D92A11E88E99300D01C76 /* SZInputRedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZInputRedCell.xib; sourceTree = "<group>"; };
+		AA2D92A41E88EB8500D01C76 /* SZInputWhiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZInputWhiteController.h; sourceTree = "<group>"; };
+		AA2D92A51E88EB8500D01C76 /* SZInputWhiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZInputWhiteController.m; sourceTree = "<group>"; };
+		AA2D92A61E88EB8500D01C76 /* SZInputWhiteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZInputWhiteController.xib; sourceTree = "<group>"; };
+		AA2D92A91E88EBF200D01C76 /* SZInputWhiteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZInputWhiteCell.h; sourceTree = "<group>"; };
+		AA2D92AA1E88EBF200D01C76 /* SZInputWhiteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZInputWhiteCell.m; sourceTree = "<group>"; };
+		AA2D92AB1E88EBF200D01C76 /* SZInputWhiteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZInputWhiteCell.xib; sourceTree = "<group>"; };
+		AA2D92AE1E88ED9D00D01C76 /* SZInputColorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZInputColorController.h; sourceTree = "<group>"; };
+		AA2D92AF1E88ED9D00D01C76 /* SZInputColorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZInputColorController.m; sourceTree = "<group>"; };
+		AA2D92B01E88ED9D00D01C76 /* SZInputColorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZInputColorController.xib; sourceTree = "<group>"; };
 		AA2F85271E83771600807230 /* SZCustomerDetilItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCustomerDetilItem.h; sourceTree = "<group>"; };
 		AA2F85281E83771600807230 /* SZCustomerDetilItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCustomerDetilItem.m; sourceTree = "<group>"; };
 		AA2F852A1E83B75900807230 /* SZSupplierItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSupplierItem.h; sourceTree = "<group>"; };
@@ -544,6 +569,116 @@
 		AA04AFD41E7BCFAD003EDB44 /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA2D928E1E88E7D800D01C76 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92961E88E7D800D01C76 /* White */,
+				AA2D92911E88E7D800D01C76 /* Red */,
+				AA2D928F1E88E7D800D01C76 /* Controller */,
+				AA2D92901E88E7D800D01C76 /* Model */,
+				AA2D92951E88E7D800D01C76 /* View */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		AA2D928F1E88E7D800D01C76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92AE1E88ED9D00D01C76 /* SZInputColorController.h */,
+				AA2D92AF1E88ED9D00D01C76 /* SZInputColorController.m */,
+				AA2D92B01E88ED9D00D01C76 /* SZInputColorController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA2D92901E88E7D800D01C76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA2D92911E88E7D800D01C76 /* Red */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92921E88E7D800D01C76 /* Controller */,
+				AA2D92931E88E7D800D01C76 /* Model */,
+				AA2D92941E88E7D800D01C76 /* View */,
+			);
+			path = Red;
+			sourceTree = "<group>";
+		};
+		AA2D92921E88E7D800D01C76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D929A1E88E81800D01C76 /* SZInputRedController.h */,
+				AA2D929B1E88E81800D01C76 /* SZInputRedController.m */,
+				AA2D929C1E88E81800D01C76 /* SZInputRedController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA2D92931E88E7D800D01C76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA2D92941E88E7D800D01C76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D929F1E88E99300D01C76 /* SZInputRedCell.h */,
+				AA2D92A01E88E99300D01C76 /* SZInputRedCell.m */,
+				AA2D92A11E88E99300D01C76 /* SZInputRedCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA2D92951E88E7D800D01C76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA2D92961E88E7D800D01C76 /* White */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92971E88E7D800D01C76 /* Controller */,
+				AA2D92981E88E7D800D01C76 /* Model */,
+				AA2D92991E88E7D800D01C76 /* View */,
+			);
+			path = White;
+			sourceTree = "<group>";
+		};
+		AA2D92971E88E7D800D01C76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92A41E88EB8500D01C76 /* SZInputWhiteController.h */,
+				AA2D92A51E88EB8500D01C76 /* SZInputWhiteController.m */,
+				AA2D92A61E88EB8500D01C76 /* SZInputWhiteController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA2D92981E88E7D800D01C76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA2D92991E88E7D800D01C76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D92A91E88EBF200D01C76 /* SZInputWhiteCell.h */,
+				AA2D92AA1E88EBF200D01C76 /* SZInputWhiteCell.m */,
+				AA2D92AB1E88EBF200D01C76 /* SZInputWhiteCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1185,6 +1320,7 @@
 		AA4E14801E7E8ECC0041F0A6 /* GoodsInput(商品入库) */ = {
 			isa = PBXGroup;
 			children = (
+				AA2D928E1E88E7D800D01C76 /* Color */,
 				AA4E14811E7E8ECC0041F0A6 /* Controller */,
 				AA4E14821E7E8ECC0041F0A6 /* Model */,
 				AA4E14831E7E8ECC0041F0A6 /* View */,
@@ -2287,11 +2423,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2D92A31E88E99300D01C76 /* SZInputRedCell.xib in Resources */,
 				AAC1E0111E84FDE50008F9B3 /* SZColorCell.xib in Resources */,
 				AA438DA81E7A8AE70087D20A /* GoodsInput.xcassets in Resources */,
 				AAEB0C441E72B1ED002F4218 /* SZPasswordViewController.xib in Resources */,
 				AA49FDDD1E87B3FD00B0EC6B /* SZGoodsInputHeaderView.xib in Resources */,
 				AA733FF51E7F898100215A71 /* SZCreatePersonalStorageController.xib in Resources */,
+				AA2D929E1E88E81800D01C76 /* SZInputRedController.xib in Resources */,
+				AA2D92B21E88ED9D00D01C76 /* SZInputColorController.xib in Resources */,
 				AA5584991E8016BF00A1E164 /* SZSupplierManagerController.xib in Resources */,
 				AA5584AB1E801B1F00A1E164 /* SZSupplierDetailController.xib in Resources */,
 				AA44EB7E1E812AB000124BA3 /* SZInputController.xib in Resources */,
@@ -2302,6 +2441,7 @@
 				AA49FD791E863C5300B0EC6B /* SZGoodsManagerCell.xib in Resources */,
 				AA7340451E80068900215A71 /* SZStaffListController.xib in Resources */,
 				AA5584C21E8026F300A1E164 /* SZStaffDetailController.xib in Resources */,
+				AA2D92A81E88EB8500D01C76 /* SZInputWhiteController.xib in Resources */,
 				AA493ED01E7CC0A7002CF24D /* SZRegisterViewController.xib in Resources */,
 				AA438D971E7A78DA0087D20A /* SZWeChatLoginController.xib in Resources */,
 				AA7340191E7FC48400215A71 /* SZCustomerManagerController.xib in Resources */,
@@ -2316,6 +2456,7 @@
 				AAEB0C1D1E7298A2002F4218 /* SZLoginViewController.xib in Resources */,
 				AA5584B91E80236300A1E164 /* SZCustomerDetailController.xib in Resources */,
 				AA49FD8D1E864EC100B0EC6B /* SZEditGoodsController.storyboard in Resources */,
+				AA2D92AD1E88EBF200D01C76 /* SZInputWhiteCell.xib in Resources */,
 				AA04AFE01E7C2269003EDB44 /* Main.xcassets in Resources */,
 				AA04AFDE1E7BCFF5003EDB44 /* SZWhiteViewController.xib in Resources */,
 				AA493EFD1E7D3AF9002CF24D /* SZOrderController.xib in Resources */,
@@ -2409,6 +2550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA04AFC61E7B9724003EDB44 /* SZSelectGoodsController.m in Sources */,
+				AA2D929D1E88E81800D01C76 /* SZInputRedController.m in Sources */,
 				AA49FD8A1E864E2200B0EC6B /* SZEditGoodsController.m in Sources */,
 				AA7340181E7FC48400215A71 /* SZCustomerManagerController.m in Sources */,
 				AA04AFDD1E7BCFF5003EDB44 /* SZWhiteViewController.m in Sources */,
@@ -2440,6 +2582,7 @@
 				AA733FF41E7F898100215A71 /* SZCreatePersonalStorageController.m in Sources */,
 				AACCFE071E71509700A9726C /* SZADItem.m in Sources */,
 				AA438D9D1E7A7F9D0087D20A /* SZGoodsOutputController.m in Sources */,
+				AA2D92AC1E88EBF200D01C76 /* SZInputWhiteCell.m in Sources */,
 				AACCFE0D1E715B3000A9726C /* SZHttpsRequest.m in Sources */,
 				AA5584931E80123800A1E164 /* SZWillVerifStaffCell.m in Sources */,
 				AA2F85341E8429C600807230 /* SZOutputListCell.m in Sources */,
@@ -2450,10 +2593,12 @@
 				AAEB0C581E74112D002F4218 /* SZVerifyPhoneController.m in Sources */,
 				AA4E14861E7E8F140041F0A6 /* SZNewAddGoodsController.m in Sources */,
 				AA2F852C1E83B75900807230 /* SZSupplierItem.m in Sources */,
+				AA2D92A21E88E99300D01C76 /* SZInputRedCell.m in Sources */,
 				AA438DBB1E7AD92F0087D20A /* UIImage+Original.m in Sources */,
 				AA5584AF1E80201500A1E164 /* SZNewBuildSupplierController.m in Sources */,
 				AA438DA31E7A80350087D20A /* SZOutputListController.m in Sources */,
 				AA7340031E7F9EE000215A71 /* SZStoryageVerifyController.m in Sources */,
+				AA2D92A71E88EB8500D01C76 /* SZInputWhiteController.m in Sources */,
 				AA2F85381E84312F00807230 /* SZFloatButton.m in Sources */,
 				AA733FEF1E7F895C00215A71 /* SZJoinExitStorageController.m in Sources */,
 				AAE37FC51E7AE8BC0089C592 /* SZSortKindButton.m in Sources */,
@@ -2486,6 +2631,7 @@
 				AAEB0C5D1E741AB5002F4218 /* SZResetPasswordController.m in Sources */,
 				AA7340371E80042500215A71 /* SZStaffManagerController.m in Sources */,
 				AAEB0C0F1E7280D8002F4218 /* SZBaseTableView.m in Sources */,
+				AA2D92B11E88ED9D00D01C76 /* SZInputColorController.m in Sources */,
 				AA438DA01E7A7FD70087D20A /* SZGoodsInputController.m in Sources */,
 				AACCFDE61E70F43800A9726C /* SZSystemInfo.m in Sources */,
 				AA49FD911E865CD500B0EC6B /* SZStorageManagerController.m in Sources */,
