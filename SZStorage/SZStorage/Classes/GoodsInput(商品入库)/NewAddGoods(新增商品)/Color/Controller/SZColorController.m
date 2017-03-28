@@ -24,6 +24,7 @@
 - (void)setup
 {
     _ItemArray = @[@"白色",@"黑色",@"红色",@"灰色"];
+    self.view.backgroundColor = SZColor(240, 240, 240);
 }
 
 #pragma mark - Table view data source

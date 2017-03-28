@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *oneImage;
 @property (weak, nonatomic) IBOutlet UILabel *oneLabel;
 
+//@property (nonatomic,assign) BOOL isFirst;  //TODO
 
 @end
 
@@ -57,6 +58,7 @@
     _twinLabel.textColor = SZColor(112, 112, 112);
     _oneImage.hidden = YES;
     _oneLabel.textColor = SZColor(112, 112, 112);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectUnitPiece" object:nil userInfo:@{@"unit":@"件"}];
 }
 
 - (void)caseBtnClick
@@ -69,7 +71,9 @@
     _twinLabel.textColor = SZColor(112, 112, 112);
     _oneImage.hidden = YES;
     _oneLabel.textColor = SZColor(112, 112, 112);
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"selectUnitCase" object:nil userInfo:@{@"unit":@"盒"}];
 }
+
 - (void)twinBtnClick
 {
     _pieceImage.hidden = YES;
@@ -80,7 +84,9 @@
     _twinLabel.textColor = SZColor(55, 150, 255);
     _oneImage.hidden = YES;
     _oneLabel.textColor = SZColor(112, 112, 112);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectUnitTwin" object:nil userInfo:@{@"unit":@"双"}];
 }
+
 - (void)oneBtnClick
 {
     _pieceImage.hidden = YES;
@@ -91,6 +97,7 @@
     _twinLabel.textColor = SZColor(112, 112, 112);
     _oneImage.hidden = NO;
     _oneLabel.textColor = SZColor(55, 150, 255);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectUnitOne" object:nil userInfo:@{@"unit":@"只"}];
 }
 
 + (void) showUnitView

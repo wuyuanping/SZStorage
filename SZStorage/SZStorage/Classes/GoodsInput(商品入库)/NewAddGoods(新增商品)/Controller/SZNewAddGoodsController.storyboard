@@ -441,7 +441,11 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="ColorLabel" destination="zFJ-Ms-G0j" id="CXa-Kx-8cT"/>
                         <outlet property="contentTableView" destination="LSj-Pt-iq6" id="VxW-yA-r0j"/>
+                        <outlet property="kindLabel" destination="42G-La-LhP" id="vQ8-jc-6Ub"/>
+                        <outlet property="sizeLabel" destination="f7m-bg-Jfs" id="5eY-QL-Zfo"/>
+                        <outlet property="unitLabel" destination="xlh-0q-Cpo" id="GQl-rv-OSD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqN-lY-sj4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,14 @@
 @property (nonatomic,strong) UIView *BtnView;
 @property (strong, nonatomic) IBOutlet SZBaseTableView *contentTableView;
 @property (nonatomic,strong) SZColorController *colorVC;
+//单位label
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
+//类型label
+@property (weak, nonatomic) IBOutlet UILabel *kindLabel;
+//颜色label
+@property (weak, nonatomic) IBOutlet UILabel *ColorLabel;
+//尺寸label
+@property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
 
 @end
 
@@ -53,6 +61,42 @@
     saveBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [saveAndAddBtn addTarget:self action:@selector(saveAndAddBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [_BtnView addSubview:saveAndAddBtn];
+    
+    [self addObserver];
+}
+
+- (void)addObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectUnitPiece:) name:@"selectUnitPiece" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectUnitCase:) name:@"selectUnitCase" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectUnitTwin:) name:@"selectUnitTwin" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectUnitOne:) name:@"selectUnitOne" object:nil];
+}
+
+- (void)removeObserver
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"selectUnitPiece" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"selectUnitCase" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"selectUnitTwin" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"selectUnitOne" object:nil];
+}
+
+- (void)selectUnitPiece:(NSNotification *)note
+{
+    _unitLabel.text = note.userInfo[@"unit"];
+}
+
+- (void)selectUnitCase:(NSNotification *)note
+{
+    _unitLabel.text = note.userInfo[@"unit"];
+}
+- (void)selectUnitTwin:(NSNotification *)note
+{
+    _unitLabel.text = note.userInfo[@"unit"];
+}
+- (void)selectUnitOne:(NSNotification *)note
+{
+    _unitLabel.text = note.userInfo[@"unit"];
 }
 
 - (void)saveBtnClick
@@ -113,11 +157,43 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         if (indexPath.row == 4) {
             SZCoverView *coverV =  [SZCoverView showCover];
             coverV.delegate = self;
+            [self pressetColorVC];
 //            _colorVC = [[SZColorController alloc] init];
+//            _colorVC.view.frame =
 //            [self presentViewController:_colorVC animated:YES completion:nil];
+            
+            
+            
             }
         }
     NSLog(@"点击了:%ld",indexPath.row);
+}
+
+- (void)pressetColorVC
+{
+    //手动实现modal效果
+    _colorVC = [[SZColorController alloc] init];
+    _colorVC.view.frame = CGRectMake(0, SCREEN_H - 224, SCREEN_W, 224);
+    //1.获取主窗口,并在主窗口并显示
+    [[UIApplication sharedApplication].keyWindow addSubview:_colorVC.view];
+
+    CGRect frame = _colorVC.view.frame;
+    frame.origin.y = SCREEN_H;
+    _colorVC.view.frame = frame;
+    
+    //再通过动画改变高度
+    [UIView animateWithDuration:0.25 animations:^{
+        CGRect frame = _colorVC.view.frame;
+        frame.origin.y = SCREEN_H - 224;
+        _colorVC.view.frame = frame;
+    } completion:^(BOOL finished) {
+
+    }];
+}
+
+- (void)dismissVC
+{
+    [_colorVC.view removeFromSuperview];
 }
 
 #pragma mark - 遮盖代理方法
@@ -128,12 +204,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         //移除遮盖
         [coverView removeFromSuperview];
     }];
-    [self.navigationController dismissViewControllerAnimated:_colorVC completion:^{
-        //移除遮盖
-        [coverView removeFromSuperview];
-    }];
+    //2.移除颜色控制器
+    [self dismissVC];
+    [coverView removeFromSuperview];
 }
 
+- (void)dealloc
+{
+    [self removeObserver];
+}
 
 - (void)didReceiveMemoryWarning
 {

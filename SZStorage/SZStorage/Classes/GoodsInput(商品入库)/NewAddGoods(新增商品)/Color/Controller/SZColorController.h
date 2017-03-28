@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SZColorController : UITableViewController
+@interface SZColorController : SZBaseViewController
 
 @end
