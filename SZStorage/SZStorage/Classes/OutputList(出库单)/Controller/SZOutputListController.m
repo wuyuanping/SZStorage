@@ -10,6 +10,8 @@
 #import "YPSearchBar.h"
 #import "SZCoverView.h"
 #import "SZOutputListCell.h"
+#import "SZoutputListDetailController.h"
+
 
 @interface SZOutputListController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *searchView;
@@ -62,12 +64,7 @@
 {
     [searchBar resignFirstResponder]; //searchBar失去焦点
     if(_searchBar.text.length){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"搜索" message:_searchBar.text preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAction];
-        [alert addAction:cancelAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [SVProgressHUD showInfoWithStatus:@"暂时无法搜索"];
     }
 }
 
@@ -76,9 +73,7 @@
 {
     NSLog(@"%s",__func__);
     //创建遮盖
-    SZCoverView *coverView = [[SZCoverView alloc] init];
-    [coverView showCoverWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
-    _coverView = coverView;
+   
     if (_searchBar.searchBarTextField.text.length) {
         return;
     }
@@ -170,10 +165,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    SZoutputListDetailController *outputDetailVC = [[SZoutputListDetailController alloc] init];
+    [self.navigationController pushViewController:outputDetailVC animated:YES];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {

@@ -16,7 +16,7 @@
 //库存
 @property (weak, nonatomic) IBOutlet UILabel *goodsSumLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *selecedImage;
-
+@property (nonatomic,assign) BOOL isSelect;
 
 @end
 
@@ -38,7 +38,8 @@
 {
     [super setSelected:selected animated:animated];
 //    _selecedImage.image = selected? IMAGE_NAMED(@"icon_商品出库_筛选_打勾"):IMAGE_NAMED(@"icon_商品出库_筛选_选框");
-    _selecedImage.hidden = !selected; //有毒！！
+    _selecedImage.hidden = !_isSelect;
+    _isSelect = !_isSelect;
 }
 
 

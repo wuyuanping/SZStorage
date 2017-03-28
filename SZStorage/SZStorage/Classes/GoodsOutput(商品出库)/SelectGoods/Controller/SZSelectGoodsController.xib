@@ -82,14 +82,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="26" height="30"/>
                                     <state key="normal" backgroundImage="-"/>
                                     <connections>
-                                        <action selector="minusBtnClick" destination="-1" eventType="touchUpInside" id="wva-bJ-Ddm"/>
+                                        <action selector="plusPriceBtnClick" destination="-1" eventType="touchUpInside" id="m4o-Js-YCQ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duJ-SH-efv">
                                     <rect key="frame" x="78" y="0.0" width="26" height="30"/>
                                     <state key="normal" backgroundImage="+"/>
                                     <connections>
-                                        <action selector="addBtnClick" destination="-1" eventType="touchUpInside" id="DQu-Eo-0U5"/>
+                                        <action selector="addPriceBtnClick" destination="-1" eventType="touchUpInside" id="kBe-VL-qHv"/>
                                     </connections>
                                 </button>
                             </subviews>

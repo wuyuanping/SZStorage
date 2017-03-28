@@ -29,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet SZSortKindButton *orderBtn; //排序按钮
 @property (weak, nonatomic) IBOutlet SZSortKindButton *selectBtn; //筛选按钮
 
-
 @end
 
 @implementation SZGoodsManagerController
@@ -173,9 +172,7 @@
 {
     NSLog(@"%s",__func__);
     //创建遮盖
-    SZCoverView *coverView = [[SZCoverView alloc] init];
-    [coverView showCoverWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
-    _coverView = coverView;
+    
     if (_searchBar.searchBarTextField.text.length) {
         return;
     }

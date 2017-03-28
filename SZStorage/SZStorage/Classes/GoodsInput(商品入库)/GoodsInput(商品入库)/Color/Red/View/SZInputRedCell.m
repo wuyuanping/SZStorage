@@ -14,12 +14,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 
 @end
-
+static NSInteger quantity = 0;
 @implementation SZInputRedCell
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setup];
+}
+
+- (void)setup
+{
+    quantity = [_quantityLabel.text integerValue];
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView
@@ -28,18 +34,23 @@
     SZInputRedCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
 
+//数量加一
 - (IBAction)addBtnClick
 {
-
+    quantity ++;
+    _quantityLabel.text = [NSString stringWithFormat:@"%ld",(long)quantity];
 }
 
-- (IBAction)plusBtnClick
+//数量减一
+- (IBAction)minusBtnClick
 {
-
+    quantity --;
+    _quantityLabel.text = [NSString stringWithFormat:@"%ld",(long)quantity];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

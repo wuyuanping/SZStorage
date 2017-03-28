@@ -19,13 +19,12 @@
 
 @property (nonatomic,weak) id<SZCoverViewDelegate> delegate;
 
-/*
- * 当view为nil时默认遮盖加到主窗口上
- */
-- (void)showCoverWithFrame:(CGRect)coverFrame
-            PositionToView:(UIView *)view
-                completion:(void (^)())completion;
-
+//全屏
 + (instancetype)showCover;
+
+//非全屏
++ (instancetype)showOrderAndSelectCover;
+
+
 
 @end

@@ -50,6 +50,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [tableView deselectRowAtIndexPath:indexPath animated:YES];// 取消选中
 }
 
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -155,14 +155,9 @@
 #pragma mark - UISearchBar Delegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [searchBar resignFirstResponder]; //searchBar失去焦点
+    [searchBar resignFirstResponder];
     if(_searchBar.text.length){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"搜索" message:_searchBar.text preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAction];
-        [alert addAction:cancelAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [SVProgressHUD showInfoWithStatus:@"暂时无法搜索"];
     }
 }
 
@@ -171,9 +166,7 @@
 {
     NSLog(@"%s",__func__);
     //创建遮盖
-    SZCoverView *coverView = [[SZCoverView alloc] init];
-    [coverView showCoverWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
-    _coverView = coverView;
+   
     if (_searchBar.searchBarTextField.text.length) {
         return;
     }
@@ -297,7 +290,8 @@ heightForHeaderInSection:(NSInteger)section
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
-heightForFooterInSection:(NSInteger)section{
+heightForFooterInSection:(NSInteger)section
+{
     return 0.5;
 }
 
@@ -331,8 +325,8 @@ viewForHeaderInSection:(NSInteger)section
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGRect rect = [self.tableView rectForRowAtIndexPath:indexPath];
-    NSLog(@"点击cell:%@",NSStringFromCGRect(rect));
+//    CGRect rect = [self.tableView rectForRowAtIndexPath:indexPath];
+//    NSLog(@"点击cell:%@",NSStringFromCGRect(rect));
     if (indexPath.row == 0) {
         /**
          *  expand cell select method

@@ -12,7 +12,7 @@
 @interface SZGoodsInputCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *middleContentView;
-
+@property (nonatomic,strong) SZInputColorController *colorVC;
 @end
 
 @implementation SZGoodsInputCell
@@ -26,9 +26,9 @@
 - (void)setup
 {
     //添加颜色控制器
-    SZInputColorController *colorVC = [[SZInputColorController alloc] init];
-    colorVC.view.frame = CGRectMake(0, 0, SCREEN_W, 134);
-    [_middleContentView addSubview:colorVC.view];
+    _colorVC = [[SZInputColorController alloc] init];
+    _colorVC.view.frame = CGRectMake(0, 0, SCREEN_W, 134);
+    [_middleContentView addSubview:_colorVC.view];
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView

@@ -15,7 +15,7 @@
 #import "SZCoverView.h"
 #import "SZSortKindButton.h"
 
-@interface SZGoodsOutputController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface SZGoodsOutputController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,SZCoverViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIView *sortKinds;
 @property (weak, nonatomic) IBOutlet UITableView *goodsTableView;
@@ -28,8 +28,9 @@
 @property (nonatomic,assign) BOOL selectIsOpen;
 //@property (nonatomic,assign) BOOL isCreateCover;
 @property (nonatomic,strong) SZCoverView *coverView;
-@property (nonatomic,strong) SZCoverView *OrderCover;
-@property (nonatomic,strong) SZCoverView *SelectCover;
+@property (nonatomic,strong) SZCoverView *orderAndSelectCover;
+//@property (nonatomic,strong) SZCoverView *OrderCover;
+//@property (nonatomic,strong) SZCoverView *SelectCover;
 
 @property (weak, nonatomic) IBOutlet UIView *showNoneView;
 
@@ -42,8 +43,8 @@
     if (!_OrderTableController) {
         _OrderTableController = [[SZOrderController alloc] init];
         _OrderTableController.tableView.contentSize = CGSizeMake(SCREEN_W, 176);
-        _OrderTableController.view.frame = CGRectMake(0, 98, SCREEN_W, 176);
-        [self.view addSubview:_OrderTableController.view];
+        _OrderTableController.view.frame = CGRectMake(0, 163, SCREEN_W, 176);
+        [[UIApplication sharedApplication].keyWindow addSubview:_OrderTableController.view];
     }
     return _OrderTableController;
 }
@@ -53,8 +54,8 @@
     if (!_SelectTableController) {
         _SelectTableController = [[SZSelectController alloc] init];
         _SelectTableController.tableView.contentSize = CGSizeMake(SCREEN_W, 176);
-        _SelectTableController.view.frame = CGRectMake(0, 98, SCREEN_W, 176);
-        [self.view addSubview:_SelectTableController.view];
+        _SelectTableController.view.frame = CGRectMake(0, 163, SCREEN_W, 176);
+        [[UIApplication sharedApplication].keyWindow addSubview:_SelectTableController.view];
     }
     return _SelectTableController;
 }
@@ -168,12 +169,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [searchBar resignFirstResponder]; //searchBar失去焦点
     if(_searchBar.text.length){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"搜索" message:_searchBar.text preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:confirmAction];
-        [alert addAction:cancelAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [SVProgressHUD showInfoWithStatus:@"抱歉暂时无法搜索"];
     }
 }
 
@@ -182,9 +178,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%s",__func__);
     //创建遮盖
-    SZCoverView *coverView = [[SZCoverView alloc] init];
-    [coverView showCoverWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
-    _coverView = coverView;
+//    SZCoverView *coverView = [[SZCoverView alloc] init];
+//    [coverView showCoverWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
+//    _coverView = coverView;
     if (_searchBar.searchBarTextField.text.length) {
         return;
     }
@@ -251,27 +247,17 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
     NSLog(@"%s",__func__);
 }
 
-- (void)touchesBegan:(NSSet *)touches
-           withEvent:(UIEvent *)event
-{
-//    [_coverView removeFromSuperview];
-//    [self.view endEditing:YES];
-//    self.OrderTableController.view.height = 0;
-//    self.SelectTableController.view.height = 0;
-}
-
 //点击排序
 - (IBAction)orderBtnClick
 {
     if (self.orderIsOpen) {//默认所有属性初始化都为0，即假
         self.OrderTableController.view.height = 0;
-//        [_OrderCover removeFromSuperview];  // 不好使？？？？待解决
+        [_orderAndSelectCover removeFromSuperview];  // 不好使？？？？待解决
     }else{
         //创建遮盖
-//        SZCoverView *orderCover = [[SZCoverView alloc] init];
-//        _OrderCover = orderCover;
-//        [orderCover showCoverWithFrame:CGRectMake(0, 339, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
-            self.OrderTableController.view.height = 176;
+//       SZCoverView *orderCover = [SZCoverView showOrderAndSelectCover];
+//        orderCover.delegate = self;
+        self.OrderTableController.view.height = 176;
     }
     self.orderIsOpen = !self.orderIsOpen;
 }
@@ -281,14 +267,28 @@ selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
     if (self.selectIsOpen) {
         self.SelectTableController.view.height = 0;
-//        [_SelectCover removeFromSuperview];  // 不好使？？？？待解决
+         [_orderAndSelectCover removeFromSuperview]; // 不好使？？？？待解决
     }else{
-//        SZCoverView *selectCover = [[SZCoverView alloc] init];
-//        _SelectCover = selectCover;
-//        [selectCover showCoverWithFrame:CGRectMake(0, 339, SCREEN_W, SCREEN_H) PositionToView:nil completion:nil];
+//        SZCoverView *selectCover = [SZCoverView showOrderAndSelectCover];
+//        selectCover.delegate = self;
         self.SelectTableController.view.height = 176;
     }
     self.selectIsOpen = !self.selectIsOpen;
+}
+
+#pragma mark - SZCoverViewDelegate
+- (void)coverViewDidClose:(SZCoverView *)coverView
+{
+    _orderAndSelectCover = coverView;
+    if (_OrderTableController) {
+         self.OrderTableController.view.height = 0;
+        [coverView removeFromSuperview];
+    }
+    if (_SelectTableController) {
+         self.SelectTableController.view.height = 0;
+        [coverView removeFromSuperview];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

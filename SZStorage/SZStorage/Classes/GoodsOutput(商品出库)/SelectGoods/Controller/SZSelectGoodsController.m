@@ -13,8 +13,11 @@
 @interface SZSelectGoodsController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//售价
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+//上次售价
 @property (weak, nonatomic) IBOutlet UILabel *prePriceLabel;
+//单价
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 
 @property (nonatomic,weak) UIScrollView *topScrollView;
@@ -29,6 +32,10 @@
 @end
 
 static NSString * const ID = @"cell";
+
+// TODO Price待确定！！
+static NSInteger price = 160;
+
 @implementation SZSelectGoodsController
 
 - (void)viewDidLoad
@@ -214,6 +221,20 @@ static NSString * const ID = @"cell";
     NSInteger page = scrollView.contentOffset.x / SCREEN_W;
     UIButton *btn = self.btns[page];
     [self titleClick:btn];
+}
+
+//价格加一
+- (IBAction)addPriceBtnClick
+{
+    price ++;
+    _currentPriceLabel.text = [NSString stringWithFormat:@"%ld",(long)price];
+}
+
+//价格减一
+- (IBAction)plusPriceBtnClick
+{
+    price --;
+    _currentPriceLabel.text = [NSString stringWithFormat:@"%ld",(long)price];
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sumLabel;
 
 @end
-
+static NSInteger sum = 10;
 @implementation SZRedCell
 
 - (void)awakeFromNib
@@ -27,17 +27,21 @@
     SZRedCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
 
 - (IBAction)minusBtnClick
 {
-
+    sum --;
+    _sumLabel.text = [NSString stringWithFormat:@"%ld",(long)sum];
 }
 
 - (IBAction)addBtnClick
 {
+    sum ++;
+    _sumLabel.text = [NSString stringWithFormat:@"%ld",(long)sum];
 
 }
 

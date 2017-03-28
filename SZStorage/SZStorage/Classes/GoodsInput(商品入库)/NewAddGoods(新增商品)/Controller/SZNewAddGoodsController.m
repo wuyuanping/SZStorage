@@ -7,13 +7,13 @@
 //
 
 #import "SZNewAddGoodsController.h"
-#import "SZHeaderView.h"
 #import "SZUnitView.h"
 #import "SZCoverView.h"
 #import "SZColorController.h"
 #import "SZGoodsManagerController.h"
+#import "SZGoodsSpecificationController.h"
 
-@interface SZNewAddGoodsController ()<SZCoverViewDelegate>
+@interface SZNewAddGoodsController ()<SZCoverViewDelegate,UITextFieldDelegate>
 @property (nonatomic,strong) UIView *BtnView;
 @property (strong, nonatomic) IBOutlet SZBaseTableView *contentTableView;
 @property (nonatomic,strong) SZColorController *colorVC;
@@ -25,9 +25,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *ColorLabel;
 //尺寸label
 @property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
+//规格成本
+@property (weak, nonatomic) IBOutlet UILabel *costLabel;
+//每个规格批发价
+@property (weak, nonatomic) IBOutlet UILabel *costPiFaLabel;
+//每个规格库存
+@property (weak, nonatomic) IBOutlet UILabel *storageSumLabel;
+//总库存
+@property (weak, nonatomic) IBOutlet UILabel *sumLabel;
+@property (weak, nonatomic) IBOutlet UITextField *goodsNameFiled;
+
 
 @end
-
+static NSInteger costLabel = 140;
+static NSInteger costPiFaLabel = 160;
+static NSInteger storageSumLabel = 250;
 @implementation SZNewAddGoodsController
 
 - (void)viewDidLoad
@@ -41,6 +53,7 @@
     self.navigationItem.title = @"新增商品";
     _BtnView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_H - 108, SCREEN_W, 44)];
     [self.contentTableView addSubview:_BtnView];
+    _goodsNameFiled.delegate = self;
     
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     saveBtn.frame = CGRectMake(0, 0, SCREEN_W * 0.5, 44);
@@ -90,10 +103,12 @@
 {
     _unitLabel.text = note.userInfo[@"unit"];
 }
+
 - (void)selectUnitTwin:(NSNotification *)note
 {
     _unitLabel.text = note.userInfo[@"unit"];
 }
+
 - (void)selectUnitOne:(NSNotification *)note
 {
     _unitLabel.text = note.userInfo[@"unit"];
@@ -109,7 +124,7 @@
 
 - (void)saveAndAddBtnClick
 {
-
+    [SVProgressHUD showInfoWithStatus:@"待完善"];
 }
 
 //头视图高度
@@ -120,7 +135,7 @@ heightForHeaderInSection:(NSInteger)section
         return 10;
     }
     if (section == 2) {
-        return 40;
+        return 10;
     }
     return 0;
 }
@@ -132,41 +147,41 @@ heightForFooterInSection:(NSInteger)section
     return 0;
 }
 
-//设置头部视图View
-- (UIView *)tableView:(UITableView *)tableView
-viewForHeaderInSection:(NSInteger)section
-{
-    if (section == 2) {
-        SZHeaderView *headView = [SZHeaderView viewForXib];
-        headView.backgroundColor = SZColor(240 , 240, 240);
-        return headView;
-    }
-    return nil;
-}
-
 #pragma mark - UITabelDelegate
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [SVProgressHUD showInfoWithStatus:@"待完善"];
+        }
+        if (indexPath.row == 1) {
+            [SVProgressHUD showInfoWithStatus:@"待完善"];
+        }
         if (indexPath.row == 2) {
             SZCoverView *coverV =  [SZCoverView showCover];
             coverV.delegate = self;
             [SZUnitView showUnitView];
         }
+        if (indexPath.row == 3) {
+            [SVProgressHUD showInfoWithStatus:@"待完善"];
+        }
         if (indexPath.row == 4) {
             SZCoverView *coverV =  [SZCoverView showCover];
             coverV.delegate = self;
             [self pressetColorVC];
-//            _colorVC = [[SZColorController alloc] init];
-//            _colorVC.view.frame =
-//            [self presentViewController:_colorVC animated:YES completion:nil];
-            
-            
-            
             }
         }
-    NSLog(@"点击了:%zd",indexPath.row);
+    if (indexPath.section == 1) {
+        if (indexPath.row == 3) {
+            //进入商品规格设置
+            SZGoodsSpecificationController  *specificationVC = [[SZGoodsSpecificationController alloc] init];
+            [self.navigationController pushViewController:specificationVC animated:YES];
+        }
+    }
+    
+    
+    [self.view endEditing:YES];
 }
 
 - (void)pressetColorVC
@@ -174,21 +189,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     //手动实现modal效果
     _colorVC = [[SZColorController alloc] init];
     _colorVC.view.frame = CGRectMake(0, SCREEN_H - 224, SCREEN_W, 224);
-    //1.获取主窗口,并在主窗口并显示
     [[UIApplication sharedApplication].keyWindow addSubview:_colorVC.view];
-
     CGRect frame = _colorVC.view.frame;
     frame.origin.y = SCREEN_H;
     _colorVC.view.frame = frame;
-    
-    //再通过动画改变高度
     [UIView animateWithDuration:0.25 animations:^{
         CGRect frame = _colorVC.view.frame;
         frame.origin.y = SCREEN_H - 224;
         _colorVC.view.frame = frame;
-    } completion:^(BOOL finished) {
-
-    }];
+    } completion:nil];
 }
 
 - (void)dismissVC
@@ -209,6 +218,61 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [coverView removeFromSuperview];
 }
 
+//规格成本加一
+- (IBAction)costAddBtnClick
+{
+    costLabel ++;
+    _costLabel.text = [NSString stringWithFormat:@"%ld",(long)costLabel];
+}
+
+//规格成本减一
+- (IBAction)costMinusBtnClick
+{
+    costLabel --;
+    _costLabel.text = [NSString stringWithFormat:@"%ld",(long)costLabel];
+}
+
+//每个规格批发价加一
+- (IBAction)costPiFaAddBtnClick
+{
+    costPiFaLabel ++;
+    _costPiFaLabel.text = [NSString stringWithFormat:@"%ld",(long)costPiFaLabel];
+
+}
+
+//每个规格批发价减一
+- (IBAction)costPiFaMinusBtnClick
+{
+    costPiFaLabel --;
+    _costPiFaLabel.text = [NSString stringWithFormat:@"%ld",(long)costPiFaLabel];
+}
+
+//每个规格库存加一
+- (IBAction)storageAddBtnClick
+{
+    storageSumLabel ++;
+    _storageSumLabel.text = [NSString stringWithFormat:@"%ld",(long)storageSumLabel];
+    _sumLabel.text = [NSString stringWithFormat:@"%ld",(long)storageSumLabel];
+}
+
+//每个规格库存减一
+- (IBAction)storageMinusBtnClick
+{
+    storageSumLabel --;
+    if (storageSumLabel == 0) {
+        return;
+    }
+    _storageSumLabel.text = [NSString stringWithFormat:@"%ld",(long)storageSumLabel];
+    _sumLabel.text = [NSString stringWithFormat:@"%ld",(long)storageSumLabel];
+
+}
+
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    _goodsNameFiled.placeholder = textField.text;
+}
+
 - (void)dealloc
 {
     [self removeObserver];
@@ -219,5 +283,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [super didReceiveMemoryWarning];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches
+           withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 @end

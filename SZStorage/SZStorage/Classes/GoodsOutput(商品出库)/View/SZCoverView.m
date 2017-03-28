@@ -10,23 +10,6 @@
 
 @implementation SZCoverView
 
--  (void)showCoverWithFrame:(CGRect)coverFrame PositionToView:(UIView *)view completion:(void (^)())completion
-{
-    SZCoverView *cover = [[SZCoverView alloc] init];
-    cover.frame = coverFrame;
-    cover.backgroundColor = [UIColor clearColor];  //治标不治本！！！
-    cover.alpha = 1;
-    //显示到最上方向东西都是添加到主窗口上的.
-    if (view == nil) {
-        [[UIApplication sharedApplication].keyWindow addSubview:cover];
-    }else{
-        [self insertSubview:cover aboveSubview:view];
-    }
-    if (completion) {
-        completion();
-    }
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches
            withEvent:(UIEvent *)event
 {
@@ -35,7 +18,6 @@
     if ([self.delegate respondsToSelector:@selector(coverViewDidClose:)]) {
         [self.delegate coverViewDidClose:self];
     }
-//    [self removeFromSuperview];
 }
 
 + (instancetype)showCover
@@ -49,7 +31,16 @@
     return cover;
 }
 
-
++ (instancetype)showOrderAndSelectCover
+{
+    SZCoverView *cover = [[self alloc] init];
+    cover.frame = CGRectMake(0, 163, SCREEN_W, SCREEN_H - 163);
+    cover.backgroundColor = [UIColor blackColor];
+    cover.alpha = 0.5;
+    //显示到最上方向东西都是添加到主窗口上的.
+    [[UIApplication sharedApplication].keyWindow addSubview:cover];
+    return cover;
+}
 
 
 @end

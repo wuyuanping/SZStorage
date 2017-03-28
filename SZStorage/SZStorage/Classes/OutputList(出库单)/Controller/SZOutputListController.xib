@@ -22,26 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sI-wF-RRP">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="n7v-dy-e1b"/>
-                    </constraints>
-                </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="llH-s9-e20" customClass="SZBaseTableView">
-                    <rect key="frame" x="0.0" y="54" width="375" height="613"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="zlf-b7-9um"/>
-                        <outlet property="delegate" destination="-1" id="yw0-ek-bmt"/>
-                    </connections>
-                </tableView>
-                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-D6-HMx" customClass="SZFloatButton">
-                    <rect key="frame" x="261" y="533" width="114" height="60"/>
-                    <state key="normal" title="Button" image="icon_出库单_悬浮按钮_正常"/>
-                    <state key="selected" image="icon_出库单_悬浮按钮_选中"/>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-07-n4F">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
@@ -64,22 +44,42 @@
                         <constraint firstItem="H7D-yE-ApO" firstAttribute="leading" secondItem="Bos-07-n4F" secondAttribute="leading" constant="150" id="mKv-VE-FqU"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sI-wF-RRP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="n7v-dy-e1b"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="llH-s9-e20" customClass="SZBaseTableView">
+                    <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zlf-b7-9um"/>
+                        <outlet property="delegate" destination="-1" id="yw0-ek-bmt"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGL-oB-NMK">
+                    <rect key="frame" x="315" y="533" width="60" height="60"/>
+                    <state key="normal" backgroundImage="icon_出库单_悬浮按钮_正常"/>
+                    <state key="selected" backgroundImage="icon_出库单_悬浮按钮_选中"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Bos-07-n4F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3NC-Pn-SC1"/>
+                <constraint firstAttribute="bottom" secondItem="xGL-oB-NMK" secondAttribute="bottom" constant="74" id="3hR-pd-hqU"/>
                 <constraint firstItem="llH-s9-e20" firstAttribute="top" secondItem="5sI-wF-RRP" secondAttribute="bottom" constant="10" id="67Y-CA-RCm"/>
                 <constraint firstItem="5sI-wF-RRP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6q0-gt-ez7"/>
                 <constraint firstAttribute="bottom" secondItem="Bos-07-n4F" secondAttribute="bottom" id="7d4-ba-zeY"/>
                 <constraint firstAttribute="trailing" secondItem="5sI-wF-RRP" secondAttribute="trailing" id="G2N-L9-qhb"/>
                 <constraint firstItem="Bos-07-n4F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="W7i-Ey-5x6"/>
                 <constraint firstAttribute="trailing" secondItem="Bos-07-n4F" secondAttribute="trailing" id="Wim-Mh-XTH"/>
-                <constraint firstAttribute="bottom" secondItem="dHa-D6-HMx" secondAttribute="bottom" constant="74" id="a3Q-y8-Q7R"/>
                 <constraint firstItem="llH-s9-e20" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ade-za-Lba"/>
                 <constraint firstAttribute="trailing" secondItem="llH-s9-e20" secondAttribute="trailing" id="lRC-Sk-geV"/>
                 <constraint firstAttribute="bottom" secondItem="llH-s9-e20" secondAttribute="bottom" id="tlP-P5-bjV"/>
                 <constraint firstItem="5sI-wF-RRP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v8o-JG-hYH"/>
-                <constraint firstAttribute="trailing" secondItem="dHa-D6-HMx" secondAttribute="trailing" id="xcW-3I-ryq"/>
+                <constraint firstAttribute="trailing" secondItem="xGL-oB-NMK" secondAttribute="trailing" id="zEL-1o-Njn"/>
             </constraints>
             <point key="canvasLocation" x="-79" y="54"/>
         </view>

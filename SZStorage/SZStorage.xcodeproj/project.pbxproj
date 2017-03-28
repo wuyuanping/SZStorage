@@ -129,8 +129,6 @@
 		AA7340451E80068900215A71 /* SZStaffListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7340431E80068900215A71 /* SZStaffListController.xib */; };
 		AA7340491E8006E400215A71 /* SZWillVerifyStaffController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7340471E8006E400215A71 /* SZWillVerifyStaffController.m */; };
 		AA73404A1E8006E400215A71 /* SZWillVerifyStaffController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7340481E8006E400215A71 /* SZWillVerifyStaffController.xib */; };
-		AAC1DFFC1E84C1B20008F9B3 /* SZHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC1DFFB1E84C1B20008F9B3 /* SZHeaderView.m */; };
-		AAC1DFFE1E84C1BE0008F9B3 /* SZHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC1DFFD1E84C1BE0008F9B3 /* SZHeaderView.xib */; };
 		AAC1E0011E84CC310008F9B3 /* SZUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC1E0001E84CC310008F9B3 /* SZUnitView.m */; };
 		AAC1E0031E84CC610008F9B3 /* SZUnitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC1E0021E84CC610008F9B3 /* SZUnitView.xib */; };
 		AAC1E00B1E84F93A0008F9B3 /* SZColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC1E0091E84F93A0008F9B3 /* SZColorController.m */; };
@@ -147,6 +145,12 @@
 		AACCFE041E714E0500A9726C /* SZADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACCFE021E714E0500A9726C /* SZADViewController.xib */; };
 		AACCFE071E71509700A9726C /* SZADItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCFE061E71509700A9726C /* SZADItem.m */; };
 		AACCFE0D1E715B3000A9726C /* SZHttpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AACCFE0C1E715B3000A9726C /* SZHttpsRequest.m */; };
+		AAE3295D1E8A1DA200B62229 /* SZoutputListDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE3295B1E8A1DA200B62229 /* SZoutputListDetailController.m */; };
+		AAE3295E1E8A1DA200B62229 /* SZoutputListDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE3295C1E8A1DA200B62229 /* SZoutputListDetailController.xib */; };
+		AAE329661E8A435700B62229 /* SZGoodsSpecificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE329641E8A435700B62229 /* SZGoodsSpecificationController.m */; };
+		AAE329671E8A435700B62229 /* SZGoodsSpecificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE329651E8A435700B62229 /* SZGoodsSpecificationController.xib */; };
+		AAE3296B1E8A45D800B62229 /* SZGoodsSpecificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE329691E8A45D800B62229 /* SZGoodsSpecificationCell.m */; };
+		AAE3296C1E8A45D800B62229 /* SZGoodsSpecificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE3296A1E8A45D800B62229 /* SZGoodsSpecificationCell.xib */; };
 		AAE37FC21E7AE4320089C592 /* UIView+YPView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE37FC11E7AE4320089C592 /* UIView+YPView.m */; };
 		AAE37FC51E7AE8BC0089C592 /* SZSortKindButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE37FC41E7AE8BC0089C592 /* SZSortKindButton.m */; };
 		AAEB0C001E7254FD002F4218 /* SZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB0BFF1E7254FD002F4218 /* SZBaseViewController.m */; };
@@ -356,9 +360,6 @@
 		AA7340461E8006E400215A71 /* SZWillVerifyStaffController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZWillVerifyStaffController.h; sourceTree = "<group>"; };
 		AA7340471E8006E400215A71 /* SZWillVerifyStaffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZWillVerifyStaffController.m; sourceTree = "<group>"; };
 		AA7340481E8006E400215A71 /* SZWillVerifyStaffController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZWillVerifyStaffController.xib; sourceTree = "<group>"; };
-		AAC1DFFA1E84C1B20008F9B3 /* SZHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHeaderView.h; sourceTree = "<group>"; };
-		AAC1DFFB1E84C1B20008F9B3 /* SZHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZHeaderView.m; sourceTree = "<group>"; };
-		AAC1DFFD1E84C1BE0008F9B3 /* SZHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZHeaderView.xib; sourceTree = "<group>"; };
 		AAC1DFFF1E84CC310008F9B3 /* SZUnitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZUnitView.h; sourceTree = "<group>"; };
 		AAC1E0001E84CC310008F9B3 /* SZUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZUnitView.m; sourceTree = "<group>"; };
 		AAC1E0021E84CC610008F9B3 /* SZUnitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZUnitView.xib; sourceTree = "<group>"; };
@@ -390,6 +391,15 @@
 		AACCFE061E71509700A9726C /* SZADItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZADItem.m; sourceTree = "<group>"; };
 		AACCFE0B1E715B3000A9726C /* SZHttpsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZHttpsRequest.h; sourceTree = "<group>"; };
 		AACCFE0C1E715B3000A9726C /* SZHttpsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZHttpsRequest.m; sourceTree = "<group>"; };
+		AAE3295A1E8A1DA200B62229 /* SZoutputListDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZoutputListDetailController.h; sourceTree = "<group>"; };
+		AAE3295B1E8A1DA200B62229 /* SZoutputListDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZoutputListDetailController.m; sourceTree = "<group>"; };
+		AAE3295C1E8A1DA200B62229 /* SZoutputListDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZoutputListDetailController.xib; sourceTree = "<group>"; };
+		AAE329631E8A435700B62229 /* SZGoodsSpecificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGoodsSpecificationController.h; sourceTree = "<group>"; };
+		AAE329641E8A435700B62229 /* SZGoodsSpecificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGoodsSpecificationController.m; sourceTree = "<group>"; };
+		AAE329651E8A435700B62229 /* SZGoodsSpecificationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZGoodsSpecificationController.xib; sourceTree = "<group>"; };
+		AAE329681E8A45D800B62229 /* SZGoodsSpecificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGoodsSpecificationCell.h; sourceTree = "<group>"; };
+		AAE329691E8A45D800B62229 /* SZGoodsSpecificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGoodsSpecificationCell.m; sourceTree = "<group>"; };
+		AAE3296A1E8A45D800B62229 /* SZGoodsSpecificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SZGoodsSpecificationCell.xib; sourceTree = "<group>"; };
 		AAE37FC01E7AE4320089C592 /* UIView+YPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YPView.h"; sourceTree = "<group>"; };
 		AAE37FC11E7AE4320089C592 /* UIView+YPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YPView.m"; sourceTree = "<group>"; };
 		AAE37FC31E7AE8BC0089C592 /* SZSortKindButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSortKindButton.h; sourceTree = "<group>"; };
@@ -728,6 +738,7 @@
 		AA438D7F1E7A757E0087D20A /* OutputList(出库单) */ = {
 			isa = PBXGroup;
 			children = (
+				AAE329511E8A1BE400B62229 /* OutputListDetail(出库单详情) */,
 				AA438D801E7A757E0087D20A /* Controller */,
 				AA438D811E7A757E0087D20A /* Model */,
 				AA438D821E7A757E0087D20A /* View */,
@@ -1279,6 +1290,7 @@
 		AA4E147C1E7E8EC10041F0A6 /* NewAddGoods(新增商品) */ = {
 			isa = PBXGroup;
 			children = (
+				AAE3295F1E8A430100B62229 /* GoodsSpecification(商品规格) */,
 				AAC1E0041E84F9120008F9B3 /* Color */,
 				AA4E147D1E7E8EC10041F0A6 /* Controller */,
 				AA4E147E1E7E8EC10041F0A6 /* Model */,
@@ -1307,9 +1319,6 @@
 		AA4E147F1E7E8EC10041F0A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAC1DFFA1E84C1B20008F9B3 /* SZHeaderView.h */,
-				AAC1DFFB1E84C1B20008F9B3 /* SZHeaderView.m */,
-				AAC1DFFD1E84C1BE0008F9B3 /* SZHeaderView.xib */,
 				AAC1DFFF1E84CC310008F9B3 /* SZUnitView.h */,
 				AAC1E0001E84CC310008F9B3 /* SZUnitView.m */,
 				AAC1E0021E84CC610008F9B3 /* SZUnitView.xib */,
@@ -2126,6 +2135,77 @@
 			name = Http;
 			sourceTree = "<group>";
 		};
+		AAE329511E8A1BE400B62229 /* OutputListDetail(出库单详情) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE329521E8A1BE400B62229 /* Controller */,
+				AAE329531E8A1BE400B62229 /* Model */,
+				AAE329541E8A1BE400B62229 /* View */,
+			);
+			path = "OutputListDetail(出库单详情)";
+			sourceTree = "<group>";
+		};
+		AAE329521E8A1BE400B62229 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE3295A1E8A1DA200B62229 /* SZoutputListDetailController.h */,
+				AAE3295B1E8A1DA200B62229 /* SZoutputListDetailController.m */,
+				AAE3295C1E8A1DA200B62229 /* SZoutputListDetailController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE329531E8A1BE400B62229 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAE329541E8A1BE400B62229 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAE3295F1E8A430100B62229 /* GoodsSpecification(商品规格) */ = {
+			isa = PBXGroup;
+			children = (
+				AAE329601E8A430100B62229 /* Controller */,
+				AAE329611E8A430100B62229 /* Model */,
+				AAE329621E8A430100B62229 /* View */,
+			);
+			path = "GoodsSpecification(商品规格)";
+			sourceTree = "<group>";
+		};
+		AAE329601E8A430100B62229 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAE329631E8A435700B62229 /* SZGoodsSpecificationController.h */,
+				AAE329641E8A435700B62229 /* SZGoodsSpecificationController.m */,
+				AAE329651E8A435700B62229 /* SZGoodsSpecificationController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAE329611E8A430100B62229 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAE329621E8A430100B62229 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAE329681E8A45D800B62229 /* SZGoodsSpecificationCell.h */,
+				AAE329691E8A45D800B62229 /* SZGoodsSpecificationCell.m */,
+				AAE3296A1E8A45D800B62229 /* SZGoodsSpecificationCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AAEB0BF21E725371002F4218 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -2446,7 +2526,6 @@
 				AA438D971E7A78DA0087D20A /* SZWeChatLoginController.xib in Resources */,
 				AA7340191E7FC48400215A71 /* SZCustomerManagerController.xib in Resources */,
 				AA73401B1E7FC59E00215A71 /* Manager.xcassets in Resources */,
-				AAC1DFFE1E84C1BE0008F9B3 /* SZHeaderView.xib in Resources */,
 				AACCFE041E714E0500A9726C /* SZADViewController.xib in Resources */,
 				AA438DAC1E7A8C360087D20A /* SZGoodsInputController.xib in Resources */,
 				AA04AFBE1E7B8523003EDB44 /* SZOutputCell.xib in Resources */,
@@ -2454,6 +2533,7 @@
 				AA733FF01E7F895C00215A71 /* SZJoinExitStorageController.xib in Resources */,
 				AA493F021E7D3C35002CF24D /* SZOrderCell.xib in Resources */,
 				AAEB0C1D1E7298A2002F4218 /* SZLoginViewController.xib in Resources */,
+				AAE3295E1E8A1DA200B62229 /* SZoutputListDetailController.xib in Resources */,
 				AA5584B91E80236300A1E164 /* SZCustomerDetailController.xib in Resources */,
 				AA49FD8D1E864EC100B0EC6B /* SZEditGoodsController.storyboard in Resources */,
 				AA2D92AD1E88EBF200D01C76 /* SZInputWhiteCell.xib in Resources */,
@@ -2476,9 +2556,11 @@
 				AA73404A1E8006E400215A71 /* SZWillVerifyStaffController.xib in Resources */,
 				AA55848F1E800D8500A1E164 /* SZStaffListCell.xib in Resources */,
 				AAEB0C591E74112D002F4218 /* SZVerifyPhoneController.xib in Resources */,
+				AAE329671E8A435700B62229 /* SZGoodsSpecificationController.xib in Resources */,
 				AA493EDE1E7D1158002CF24D /* SZAccountBlindController.xib in Resources */,
 				AA2F85351E8429C600807230 /* SZOutputListCell.xib in Resources */,
 				AA493F0A1E7D6C40002CF24D /* SZSelectController.xib in Resources */,
+				AAE3296C1E8A45D800B62229 /* SZGoodsSpecificationCell.xib in Resources */,
 				AA493F0F1E7D6F99002CF24D /* SZSelectCell.xib in Resources */,
 				AA493F141E7D8FE5002CF24D /* SZRedCell.xib in Resources */,
 				AA49FD741E862A8800B0EC6B /* SZGoodsManagerController.xib in Resources */,
@@ -2551,6 +2633,7 @@
 			files = (
 				AA04AFC61E7B9724003EDB44 /* SZSelectGoodsController.m in Sources */,
 				AA2D929D1E88E81800D01C76 /* SZInputRedController.m in Sources */,
+				AAE3295D1E8A1DA200B62229 /* SZoutputListDetailController.m in Sources */,
 				AA49FD8A1E864E2200B0EC6B /* SZEditGoodsController.m in Sources */,
 				AA7340181E7FC48400215A71 /* SZCustomerManagerController.m in Sources */,
 				AA04AFDD1E7BCFF5003EDB44 /* SZWhiteViewController.m in Sources */,
@@ -2610,6 +2693,8 @@
 				AA73402B1E7FE15400215A71 /* SZNewBulidCustomerController.m in Sources */,
 				AA7340441E80068900215A71 /* SZStaffListController.m in Sources */,
 				AAC1E0011E84CC310008F9B3 /* SZUnitView.m in Sources */,
+				AAE329661E8A435700B62229 /* SZGoodsSpecificationController.m in Sources */,
+				AAE3296B1E8A45D800B62229 /* SZGoodsSpecificationCell.m in Sources */,
 				AA438D9A1E7A7F520087D20A /* SZTruckOutController.m in Sources */,
 				AAC1E0101E84FDE50008F9B3 /* SZColorCell.m in Sources */,
 				AA5584981E8016BF00A1E164 /* SZSupplierManagerController.m in Sources */,
@@ -2635,7 +2720,6 @@
 				AA438DA01E7A7FD70087D20A /* SZGoodsInputController.m in Sources */,
 				AACCFDE61E70F43800A9726C /* SZSystemInfo.m in Sources */,
 				AA49FD911E865CD500B0EC6B /* SZStorageManagerController.m in Sources */,
-				AAC1DFFC1E84C1B20008F9B3 /* SZHeaderView.m in Sources */,
 				AA493F091E7D6C40002CF24D /* SZSelectController.m in Sources */,
 				AA493F131E7D8FE5002CF24D /* SZRedCell.m in Sources */,
 				AA49FD711E8624A900B0EC6B /* SZGoodsManagerController.m in Sources */,

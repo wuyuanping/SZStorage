@@ -39,10 +39,18 @@ static NSString * const ID = @"cell";
     [self setupTopTitleView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (_isInitial == NO) {
+        [self setupAllTitleButton];
+        _isInitial = YES;
+    }
+}
+
 - (void)setup
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = SZColor(240, 240, 240);
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 - (void)addAllChildViewController
@@ -66,15 +74,6 @@ static NSString * const ID = @"cell";
     return _btns;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if (_isInitial == NO) {
-        [self setupAllTitleButton];
-        _isInitial = YES;
-    }
-}
-
 - (void)setupBottomContainerView
 {
     //1.创建UICollectionView
@@ -84,7 +83,7 @@ static NSString * const ID = @"cell";
     flow.minimumInteritemSpacing = 0;
     flow.minimumLineSpacing = 0;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 89) collectionViewLayout:flow];
-    collectionView.backgroundColor = [UIColor redColor];
+//    collectionView.backgroundColor = [UIColor redColor];
     collectionView.prefetchingEnabled = NO;//xcode8之后新增加属性，默认为YES，取消预加载达到优化性能作用.
     collectionView.scrollsToTop = NO;//取消不需要的scrollview，点击导航栏时只保留一个需要的滚动的!!!
     collectionView.dataSource = self;
