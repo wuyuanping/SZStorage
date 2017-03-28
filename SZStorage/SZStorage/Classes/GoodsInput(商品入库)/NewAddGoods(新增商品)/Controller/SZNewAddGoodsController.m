@@ -166,7 +166,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             
             }
         }
-    NSLog(@"点击了:%ld",indexPath.row);
+    NSLog(@"点击了:%zd",indexPath.row);
 }
 
 - (void)pressetColorVC
